@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sillages">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Sillages de Hraf</title>
+<style>
+/* Layout: grammaire iOS (onglets en bas, listes groupées, feuilles, grands titres repliables) + identité parfum : New York pour les noms, ambre comme accent, pochettes olfactives générées, flacon du jour plein cadre */
+:root{
+  --bg:#F6F4F1; --cell:#FFFFFF; --label:#141210; --label2:rgba(60,56,52,.62);
+  --sep:rgba(60,56,52,.16); --fill:rgba(120,112,104,.13); --bar:rgba(248,246,243,.84);
+  --accent:#9A5B13; --accent-soft:rgba(186,120,40,.13); --warn:#D13A2F; --warn-soft:rgba(209,58,47,.1); --ok:#2E8B57;
+  --sheet:#FFFFFF; --on-art:#FFFFFF;
+  --ui:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  --serif:ui-serif, "New York", "Iowan Old Style", "Palatino", Georgia, serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#000000; --cell:#1C1C1E; --label:#F5F2EE; --label2:rgba(235,230,224,.6);
+  --sep:rgba(84,80,76,.6); --fill:rgba(118,114,110,.24); --bar:rgba(18,18,18,.82);
+  --accent:#E7A64A; --accent-soft:rgba(231,166,74,.16); --warn:#FF6B5E; --warn-soft:rgba(255,107,94,.14); --ok:#4CC38A;
+  --sheet:#1C1C1E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#000000; --cell:#1C1C1E; --label:#F5F2EE; --label2:rgba(235,230,224,.6);
+  --sep:rgba(84,80,76,.6); --fill:rgba(118,114,110,.24); --bar:rgba(18,18,18,.82);
+  --accent:#E7A64A; --accent-soft:rgba(231,166,74,.16); --warn:#FF6B5E; --warn-soft:rgba(255,107,94,.14); --ok:#4CC38A;
+  --sheet:#1C1C1E; color-scheme:dark}
+html,body{background:var(--bg)}
+body{color:var(--label);font-family:var(--ui);font-size:17px;line-height:1.35;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button,input{font-family:inherit;color:inherit}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.view{max-width:760px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:10px calc(100px + env(safe-area-inset-bottom,0px))}
+.brand{display:flex;align-items:center;gap:8px;margin:6px 0 4px;font-family:var(--serif);font-weight:700;font-size:17px}
+.brand img{border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.eyebrow{font-size:13px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.03em;margin:8px 0 0}
+.large{font-family:var(--serif);font-size:36px;font-weight:700;letter-spacing:-.005em;margin:0 0 14px;line-height:1.1}
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:28px 0 10px;gap:12px}
+.sec h2{font-family:var(--serif);font-size:22px;font-weight:700;margin:0}
+.sec span{font-size:14px;color:var(--label2)}
+.foot{font-size:13px;color:var(--label2);margin:8px 4px 0;line-height:1.4}
+
+/* compact nav bar */
+.navbar{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:25;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--sep);font-family:var(--serif);font-weight:700;font-size:17px;opacity:0;pointer-events:none;transition:opacity .2s}
+.navbar.on{opacity:1}
+
+/* art */
+.art{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1;max-width:100%;background:var(--fill) center/cover no-repeat;box-shadow:0 1px 2px rgba(0,0,0,.08),0 6px 18px -8px rgba(0,0,0,.25)}
+.art .kind{position:absolute;left:8px;top:8px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-art);background:rgba(0,0,0,.28);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:3px 7px;border-radius:5px}
+.art .num{position:absolute;right:8px;bottom:4px;font-family:var(--serif);font-size:40px;font-weight:700;color:var(--on-art);opacity:.92;line-height:1;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+
+/* today */
+.today{position:relative;border-radius:22px;overflow:hidden;color:var(--on-art);isolation:isolate;margin-bottom:6px}
+.today-bg{position:absolute;inset:-40px;background:#333 center/cover;filter:blur(36px) saturate(1.3);transform:scale(1.1);z-index:-2}
+.today::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.5));z-index:-1}
+.today-in{display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 20px 18px;gap:8px}
+.t-eyebrow{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin:0}
+.bottle-wrap{position:relative;width:132px;margin:6px 0 4px}
+.bottle-wrap svg{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.35))}
+.mist{position:absolute;left:50%;top:2px;width:0;height:0;pointer-events:none}
+.mist i{position:absolute;left:0;top:0;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.75);animation:mist 1.2s ease-out forwards}
+@keyframes mist{from{transform:translate(-50%,0) scale(.3);opacity:.95}to{transform:translate(calc(-50% + var(--dx)),var(--dy)) scale(var(--s));opacity:0}}
+.t-name{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+.t-name span{display:block;font-size:19px;font-weight:500;opacity:.9;margin-top:2px}
+.t-res{font-size:15px;opacity:.88;margin:0;max-width:34ch}
+.t-dose{font-size:14px;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:10px;padding:8px 12px;margin:4px 0 2px}
+.t-actions{display:flex;gap:10px;width:100%;margin-top:6px}
+.t-btn{flex:1;appearance:none;border:0;border-radius:14px;padding:13px 10px;font-size:15px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.2);color:var(--on-art);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.t-btn.spray{background:rgba(255,255,255,.92);color:#1a140e}
+.t-btn.spray.holding{transform:scale(.97)}
+.t-btn.done{background:rgba(76,195,138,.9);color:#fff}
+.t-btn.over{background:rgba(255,107,94,.92);color:#fff}
+.t-btn small{display:block;font-size:12px;font-weight:500;opacity:.75;margin-top:1px}
+.t-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.t-link{appearance:none;border:0;background:none;color:var(--on-art);font-size:14px;font-weight:600;opacity:.85;cursor:pointer;padding:6px}
+
+/* shelves */
+.shelf{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(148px,42%);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * max(20px,env(safe-area-inset-left,0px)));padding:0 max(20px,env(safe-area-inset-left,0px)) 6px;scrollbar-width:none}
+.shelf::-webkit-scrollbar{display:none}
+@media (min-width:640px){.shelf{grid-auto-columns:176px}}
+.tile{appearance:none;background:none;border:0;padding:0;text-align:left;cursor:pointer;scroll-snap-align:start;min-width:0}
+.tile .t1{font-family:var(--serif);font-size:15px;font-weight:600;margin-top:7px;line-height:1.2;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.tile .t2{font-size:13px;color:var(--label2);margin-top:2px}
+
+/* segmented, search */
+.seg{display:flex;background:var(--fill);border-radius:9px;padding:2px;gap:2px}
+.seg button{flex:1;appearance:none;border:0;background:transparent;font-size:12.5px;font-weight:600;padding:7px 2px;border-radius:7px;cursor:pointer;min-width:0}
+.seg button[aria-pressed="true"]{background:var(--cell);box-shadow:0 1px 3px rgba(0,0,0,.14)}
+.search{display:flex;align-items:center;gap:6px;background:var(--fill);border-radius:10px;padding:0 10px;margin:0 0 6px}
+.search svg{flex:none;color:var(--label2)}
+.search input{flex:1;min-width:0;border:0;background:transparent;font-size:17px;padding:9px 0;outline:none}
+
+/* list */
+.list{background:var(--cell);border-radius:12px;overflow:hidden}
+.row{appearance:none;border:0;background:transparent;width:100%;display:flex;align-items:center;gap:12px;padding:10px 14px;text-align:left;cursor:pointer;position:relative;min-width:0}
+.row + .row::before{content:"";position:absolute;top:0;right:0;left:74px;border-top:.5px solid var(--sep)}
+.row .art{width:48px;height:48px;flex:none;border-radius:7px;box-shadow:none}
+.row .tx{flex:1;min-width:0}
+.r0{font-size:12px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.03em}
+.row.today-row .r0{color:var(--accent)}
+.r1{font-family:var(--serif);font-size:17px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r2{font-size:14px;color:var(--label2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{color:var(--label2);opacity:.55;flex:none}
+.check{color:var(--ok);flex:none;font-size:15px;font-weight:700}
+.power{display:inline-flex;gap:3px;flex:none}
+.power i{width:6px;height:6px;border-radius:50%;background:var(--fill)}
+.power i.on{background:var(--accent)}
+
+/* tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:.5px solid var(--sep);padding:6px max(10px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));display:flex;justify-content:space-around}
+.tabbar button{appearance:none;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;font-weight:500;color:var(--label2);padding:2px 8px;cursor:pointer;min-width:62px}
+.tabbar svg{width:26px;height:26px}
+.tabbar button[aria-selected="true"]{color:var(--accent)}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;max-height:90%;background:var(--sheet);border-radius:16px 16px 0 0;overflow-y:auto;overscroll-behavior:contain;transform:translateY(105%);transition:transform .32s cubic-bezier(.2,.8,.2,1);padding:8px max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+.sheet.on{transform:none}
+.sheet.drag{transition:none}
+@media (min-width:640px){.sheet{max-width:560px;margin:0 auto}}
+@media (prefers-reduced-motion:reduce){.sheet,.scrim,.navbar{transition:none}.mist{display:none}}
+.grab{width:38px;height:5px;border-radius:3px;background:var(--fill);margin:0 auto 12px}
+.stop{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
+.iconbtn{appearance:none;border:0;background:var(--fill);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--label2);flex:none}
+.iconbtn.fav-on{color:var(--warn)}
+.shead{display:flex;gap:14px;align-items:flex-end;margin-bottom:16px}
+.shead .art{width:112px;flex:none}
+.shead h3{font-family:var(--serif);font-size:24px;font-weight:700;margin:0;line-height:1.12}
+.shead p{margin:4px 0 0;font-size:14px;color:var(--label2)}
+.dose{background:var(--accent-soft);border-radius:12px;padding:10px 12px;font-size:15px;margin-bottom:14px}
+.dose b{color:var(--accent)}
+.blk{margin:0 0 14px}
+.k{font-size:12px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:3px}
+.blk p{margin:0;font-size:16px}
+.risk{border-radius:12px;padding:10px 12px;background:var(--warn-soft);font-size:15px;margin-bottom:14px}
+.risk .k{color:var(--warn)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tags span{font-size:13px;background:var(--fill);border-radius:999px;padding:4px 10px}
+.btn{flex:1;appearance:none;border:0;background:var(--accent);color:var(--bg);font-size:16px;font-weight:600;padding:13px;border-radius:12px;cursor:pointer}
+.btn.ghost{background:var(--fill);color:var(--accent)}
+.btnrow{display:flex;gap:10px;margin-top:8px}
+.pyr{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:15px;margin:0}
+.pyr dt{color:var(--label2);font-size:12px;font-weight:600;text-transform:uppercase;padding-top:3px}
+.pyr dd{margin:0}
+
+/* sillage */
+.sil{display:flex;gap:14px;align-items:center;background:var(--cell);border-radius:14px;padding:10px 12px;margin-bottom:14px;box-shadow:inset 0 0 0 .5px var(--sep)}
+.sil svg{width:120px;height:auto;flex:none}
+.sil .lv{font-family:var(--serif);font-size:18px;font-weight:700;margin:0}
+.sil .zn{font-size:14px;color:var(--label2);margin:2px 0 0}
+.sheet .sil{background:var(--bg)}
+
+.install{background:var(--cell);border-radius:12px;padding:14px;margin-top:26px}
+.install h4{margin:0 0 6px;font-family:var(--serif);font-size:18px}
+.install ol{margin:0;padding-left:20px;font-size:15px;color:var(--label2)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--warn);flex:none;margin:0 4px}
+.dot.subj{background:var(--label2)}
+.wrapline .r2{white-space:normal}
+.empty{color:var(--label2);font-size:15px;padding:14px}
+.ftitle{font-family:var(--serif);font-size:24px;font-weight:700;margin:0 0 16px}
+.field{margin-bottom:16px}
+.field label,.flabel{display:block;font-size:12px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.inp{width:100%;box-sizing:border-box;border:0;background:var(--fill);border-radius:10px;padding:11px 12px;font-size:17px;color:var(--label);font-family:var(--ui);appearance:none}
+textarea.inp{font-size:14px;font-family:ui-monospace,Menlo,monospace;resize:vertical;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chipt{appearance:none;border:0;background:var(--fill);border-radius:999px;padding:8px 13px;font-size:14px;font-weight:500;cursor:pointer}
+.chipt[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.btn.full{width:100%;display:block}
+.btn.danger{color:var(--warn)}
+.err{color:var(--warn);font-size:14px;margin:0 0 10px;min-height:1px}
+</style>
+</head>
+<body>
+
+
+<div class="navbar" id="navbar" aria-hidden="true"></div>
+<main>
+  <section class="view" id="v-semaine"></section>
+  <section class="view" id="v-combos" hidden></section>
+  <section class="view" id="v-parfums" hidden></section>
+  <section class="view" id="v-eviter" hidden></section>
+</main>
+
+<nav class="tabbar" role="tablist">
+  <button role="tab" data-tab="semaine" aria-selected="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5h5M10.3 2.5v6.2L4.6 18.6A1.9 1.9 0 0 0 6.3 21.5h11.4a1.9 1.9 0 0 0 1.7-2.9l-5.7-9.9V2.5"/><path d="M7 14.5h10"/><circle cx="11" cy="17.6" r=".9" fill="currentColor"/><circle cx="14" cy="16.6" r=".6" fill="currentColor"/></svg>Aujourd'hui</button>
+  <button role="tab" data-tab="combos" aria-selected="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9.5" cy="12" r="6"/><circle cx="14.5" cy="12" r="6"/></svg>Combos</button>
+  <button role="tab" data-tab="parfums" aria-selected="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="9" width="5" height="11.5" rx="1.5"/><rect x="9.5" y="5" width="5" height="15.5" rx="1.5"/><rect x="15.5" y="7.5" width="5" height="13" rx="1.5"/></svg>Parfums</button>
+  <button role="tab" data-tab="eviter" aria-selected="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 18.4 18.4 5.6"/></svg>À éviter</button>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Détail"></div>
+
+<script>
+/* ===== données ===== */
+const P={
+ MT:{n:"Musk Therapy",h:"Initio",fam:"Musqué propre",pow:2,v:true,m:"rings",c:["#6F86C2","#B49AD8"],notes:["bergamote","mandarine","magnolia blanc","cassis","santal blanc","musc blanc","musc rose"],brings:"Un effet peau propre qui adoucit et aère n'importe quel parfum lourd."},
+ FN:{n:"Fleur Narcotique",h:"Ex Nihilo",fam:"Floral fruité",pow:3,v:true,m:"petals",c:["#E86E94","#F3A46B"],pyr:{t:"bergamote, litchi, pêche",c:"hédione, jasmin, fleur d'oranger, pivoine",f:"mousse de chêne, musc blanc, bois"},notes:["bergamote","litchi","pêche","hédione","jasmin","fleur d'oranger","pivoine","mousse de chêne","musc blanc","bois"],brings:"Lumière fruitée (litchi, pêche) qui éclaire les roses et les ouds."},
+ GF:{n:"Gentle Fluidity Gold",h:"Maison Francis Kurkdjian",fam:"Ambré vanillé musqué",pow:3,v:true,m:"rings",c:["#B9871F","#E7C467"],pyr:{t:"baies, muscade",c:"coriandre",f:"bois ambrés, caramel, musc, vanille"},notes:["baies","muscade","coriandre","bois ambrés","caramel","musc","vanille"],brings:"Vanille, caramel et muscs : chaud et doux. Pont naturel vers les gourmands et les cuirs."},
+ Marfa:{n:"Marfa",h:"Memo Paris",fam:"Floral blanc solaire",pow:3,v:true,m:"petals",c:["#E9873C","#F0C64B"],pyr:{t:"mandarine, pêche",c:"ylang-ylang, tubéreuse, fleur d'oranger",f:"cèdre, vanille, tonka, santal, musc"},notes:["mandarine","pêche","ylang-ylang","tubéreuse","fleur d'oranger","cèdre","vanille","tonka","santal","musc"],brings:"Fleurs blanches crémeuses, très bon pont vers les gourmands."},
+ VT:{n:"Velvet Tonka",h:"BDK Parfums",fam:"Gourmand ambré",pow:3,v:true,m:"dots",c:["#A06B42","#D7A67A"],pyr:{t:"amande, fleur d'oranger",c:"rose, tabac",f:"ambre, amyris, bois ambrés, tonka, vanille"},notes:["amande","fleur d'oranger","rose","tabac","ambre","amyris","bois ambrés","tonka","vanille"],brings:"Amande et tonka, avec une pointe de tabac, pour arrondir les fleurs et les épices."},
+ NPM:{n:"9PM",h:"Afnan",fam:"Ambré sucré",pow:4,v:true,m:"dots",c:["#3F3285","#8A4FB5"],pyr:{t:"pomme, cannelle, lavande sauvage, bergamote",c:"fleur d'oranger, muguet",f:"vanille, tonka, ambre, patchouli"},notes:["pomme","cannelle","lavande","bergamote","fleur d'oranger","muguet","vanille","tonka","ambre","patchouli"],brings:"Sucre et cannelle très présents. Fonctionne surtout seul."},
+ GS:{n:"Grand Soir",h:"Maison Francis Kurkdjian",fam:"Ambré résineux",pow:4,v:false,m:"dots",c:["#A85A16","#E2A33C"],notes:["labdanum","benjoin","tonka","vanille","ambre"],brings:"Une base ambrée qui arrondit le cuir, l'oud et la rose.",srcNote:"Les revendeurs donnent des listes différentes ; seul le cœur ambré (labdanum, benjoin, tonka, vanille) est constant."},
+ SE:{n:"Side Effect",h:"Initio",fam:"Ambré boozy",pow:4,v:true,m:"smoke",c:["#5E2618","#B3542B"],pyr:{t:"framboise, rhum",c:"cannelle, hédione, safran, tabac",f:"cèdre, cuir, santal, vanille"},notes:["framboise","rhum","cannelle","hédione","safran","tabac","cèdre","cuir","santal","vanille"],brings:"Rhum, cannelle et tabac, avec un fond de cuir : une chaleur gourmande et sombre."},
+ AL:{n:"African Leather",h:"Memo Paris",fam:"Cuir épicé",pow:4,v:true,m:"grain",c:["#4E2C1A","#9C6B3C"],pyr:{t:"bergamote, cardamome, safran",c:"cumin, géranium",f:"cuir, musc, oud, patchouli, tonka, vétiver"},notes:["bergamote","cardamome","safran","cumin","géranium","cuir","musc","oud","patchouli","tonka","vétiver"],brings:"Un daim épicé qui rend un accord plus sombre et texturé."},
+ OB:{n:"Oud Bouquet",h:"Lancôme",fam:"Rose oud gourmand",pow:4,v:true,m:"petals",c:["#8E3D50","#CF8A6C"],notes:["safran","rose","oud","praliné","vanille"],brings:"Rose-oud sucrée et dense.",srcNote:"Tronc commun fiable seulement, les sources se contredisent sur le reste."},
+ ON:{n:"Ombre Nomade",h:"Louis Vuitton",fam:"Oud fumé",pow:5,v:true,m:"smoke",c:["#231A27","#6E3A4E"],notes:["oud","benjoin","encens","framboise"],brings:"Fumée d'encens et oud, profondeur immédiate."},
+ LSR:{n:"Les Sables Roses",h:"Louis Vuitton",fam:"Rose oud ambré",pow:5,v:true,m:"petals",c:["#CE5A75","#E8A8A0"],pyr:{t:"safran, poivre noir",c:"rose de Bulgarie, rose centifolia",f:"ambre gris, oud"},brings:"Rose fraîche sur oud chaud, construit sur le contraste."},
+ AT:{n:"Arabians Tonka",h:"Montale",fam:"Rose oud sucré",pow:5,v:true,m:"petals",c:["#6E1024","#C2413B"],pyr:{t:"bergamote, safran",c:"rose de Bulgarie, oud",f:"ambre, mousse de chêne, tonka, cuir, sucre brun, musc blanc"},brings:"Rose-oud safranée très sucrée, tenue extrême."},
+ PoaL:{n:"Portrait of a Lady",h:"Frédéric Malle",fam:"Rose patchouli",pow:5,v:true,m:"petals",c:["#4F1230","#A3245A"],pyr:{t:"rose",c:"cassis, framboise, girofle",f:"patchouli, santal, encens"},notes:["rose","cassis","framboise","girofle","patchouli","santal","encens"],brings:"Rose sombre et opulente, portée par le patchouli et l'encens."},
+ Mega:{n:"Megamare",h:"Orto Parisi",fam:"Marin minéral",pow:5,v:true,m:"waves",c:["#0C4F6B","#2BA3A8"],pyr:{t:"bergamote, citron",c:"calone, hédione, algue, immortelle",f:"ambrox, cèdre, musc"},brings:"Sel, mer et ambrox. Un seul spray suffit toujours."}
+};
+const OCC={cours:"Cours",jumua:"Jumu'ah",soir:"Soirée",rdv:"Rendez-vous",repos:"Week-end"};
+const WX={froid:"Froid",doux:"Doux",chaud:"Chaud"};
+const C=[
+ {id:"c1",a:"FN",b:"MT",kind:"top",rank:1,dose:"<b>1</b> Fleur Narcotique au cou · <b>1</b> Musk Therapy au torse",ch:["propre","floral","fruité"],why:"Le litchi et les fleurs se posent sur des muscs blancs. Les deux restent proches de la peau.",res:"Propre, lumineux, effet peau.",risk:"Discret, parfois trop : passe à 2 Fleur Narcotique si tu ne le sens plus du tout.",occ:["cours","repos"],wx:["doux","chaud"]},
+ {id:"c2",a:"Marfa",b:"VT",kind:"top",rank:2,dose:"<b>1</b> Marfa au cou · <b>1</b> Velvet Tonka au torse",ch:["crémeux","floral","gourmand"],why:"La fleur d'oranger et la tubéreuse trouvent un écho naturel dans l'amande et la tonka.",res:"Crémeux, solaire, très séduisant.",risk:"Devient sucré si tu surdoses Velvet Tonka.",occ:["rdv","soir"],wx:["doux","froid"]},
+ {id:"c3",a:"GS",b:"ON",kind:"top",rank:3,dose:"<b>1</b> Grand Soir au cou · <b>1</b> Ombre Nomade au torse",ch:["ambré","fumé","boisé"],why:"L'ambre résineux arrondit la fumée et la framboise de l'oud.",res:"Luxueux, sombre, mystérieux.",risk:"Très lourd en lieu clos. Jamais plus de 1 + 1.",occ:["soir"],wx:["froid"]},
+ {id:"c4",a:"LSR",b:"FN",kind:"top",rank:4,dose:"<b>1</b> Les Sables Roses au torse · <b>2</b> Fleur Narcotique au cou",ch:["floral","boisé","fruité"],why:"L'accord litchi-rose est un classique : le fruit éclaire la rose et allège l'oud.",res:"Élégant, chaud et frais à la fois.",risk:"Les Sables Roses écrase tout s'il est dosé à égalité.",occ:["soir","rdv"],wx:["doux","froid"]},
+ {id:"c5",a:"GF",b:"VT",kind:"top",rank:5,dose:"<b>1</b> Gentle Fluidity Gold au cou · <b>1</b> Velvet Tonka au torse",ch:["gourmand","vanillé","musqué"],why:"La vanille et les muscs du Gold prolongent l'amande de Velvet Tonka.",res:"Cocon gourmand et chic pour l'hiver.",risk:"Peut devenir sirupeux : pas plus de 1 + 1.",occ:["cours","repos","rdv"],wx:["froid"]},
+ {id:"c6",a:"AL",b:"GS",kind:"top",rank:6,dose:"<b>1</b> African Leather au torse · <b>1</b> Grand Soir au cou",ch:["cuiré","ambré","épicé"],why:"L'ambre adoucit le cumin et donne au cuir un toucher velours.",res:"Cuiré, chaud, mystérieux.",risk:"Le cumin peut ressortir « sueur » sur certaines peaux.",occ:["soir"],wx:["froid"]},
+ {id:"c7",a:"Mega",b:"MT",kind:"top",rank:7,dose:"<b>1</b> Megamare sur les vêtements · <b>1</b> Musk Therapy au cou",ch:["marin","propre"],why:"Les muscs blancs adoucissent l'iode et le minéral de Megamare.",res:"Peau propre après la mer.",risk:"Un spray de trop de Megamare et ça déborde sur toute la pièce.",occ:["cours","repos"],wx:["chaud"]},
+ {id:"c8",a:"PoaL",b:"GS",kind:"top",rank:8,dose:"<b>1</b> Portrait of a Lady au torse · <b>1</b> Grand Soir au cou",ch:["floral","ambré","épicé"],why:"La rose-patchouli se pose sur l'ambre résineux de Grand Soir, qui l'arrondit.",res:"Rose-patchouli plus ambrée et enveloppante.",risk:"Puissant, sature vite. Uniquement l'hiver.",occ:["soir","rdv"],wx:["froid"]},
+ {id:"c9",a:"SE",b:"VT",kind:"top",rank:9,dose:"<b>1</b> Side Effect au torse · <b>1</b> Velvet Tonka au cou",ch:["gourmand","vanillé","épicé"],why:"Le rhum, la cannelle et le tabac rencontrent l'amande et la tonka.",res:"Gourmand addictif.",risk:"Vanille en double : peut devenir écœurant.",occ:["soir","rdv"],wx:["froid"]},
+ {id:"c10",a:"OB",b:"MT",kind:"top",rank:10,dose:"<b>1</b> Oud Bouquet au torse · <b>1 à 2</b> Musk Therapy au cou",ch:["floral","boisé","propre"],why:"Les muscs allègent la rose-oud pralinée.",res:"Une rose-oud portable de jour en hiver.",risk:"Oud Bouquet garde le dessus. Reste à 1 spray.",occ:["cours","jumua","repos"],wx:["froid","doux"]},
+ {id:"c11",a:"VT",b:"MT",kind:"layer",dose:"<b>1</b> Velvet Tonka au torse · <b>1</b> Musk Therapy au cou",ch:["poudré","gourmand","propre"],why:"Le musc aère le gourmand, l'amande réchauffe le musc.",res:"Douceur poudrée, confortable.",risk:"Peu de projection : c'est voulu.",occ:["cours","repos"],wx:["froid","doux"]},
+ {id:"c12",a:"Marfa",b:"MT",kind:"layer",dose:"<b>1</b> Marfa au cou · <b>1</b> Musk Therapy au torse",ch:["floral","crémeux","propre"],why:"Le musc assagit la tubéreuse.",res:"Fleur blanche propre, portable en cours.",risk:"La tubéreuse peut monter à la chaleur.",occ:["cours","repos"],wx:["doux","chaud"]},
+ {id:"c13",a:"GF",b:"FN",kind:"layer",dose:"<b>1</b> Gentle Fluidity Gold au torse · <b>1</b> Fleur Narcotique au cou",ch:["floral","vanillé","fruité"],why:"La vanille du Gold adoucit le litchi et la pêche.",res:"Doux, lumineux, discret.",risk:"Moins net qu'avec une version fraîche : garde 1 + 1.",occ:["cours","repos"],wx:["doux"]},
+ {id:"c14",a:"AT",b:"MT",kind:"layer",dose:"<b>1</b> Arabians Tonka au torse · <b>2</b> Musk Therapy au cou",ch:["floral","boisé","propre"],why:"Le musc aère le sucre et l'oud.",res:"Rose-oud plus propre et portable.",risk:"Arabians Tonka reste dominant : pas plus d'1 spray.",occ:["soir","jumua","repos"],wx:["froid","doux"]},
+ {id:"c15",a:"AT",b:"AL",kind:"layer",dose:"<b>1</b> Arabians Tonka au torse · <b>1</b> African Leather sur les vêtements",ch:["cuiré","épicé","sombre"],why:"Ils partagent le safran et la facette cuir.",res:"Sombre, cuiré, sucré-épicé.",risk:"Le cumin peut alourdir le tout.",occ:["soir"],wx:["froid"]},
+ {id:"c16",a:"AT",b:"FN",kind:"layer",dose:"<b>1</b> Arabians Tonka au torse · <b>2</b> Fleur Narcotique au cou",ch:["floral","fruité","boisé"],why:"Même logique que Les Sables Roses + Fleur Narcotique.",res:"Rose-oud éclairée par le litchi.",risk:"Le sucre d'Arabians Tonka peut rendre le tout bonbon.",occ:["soir","rdv"],wx:["doux","froid"]},
+ {id:"c18",a:"GS",b:"SE",kind:"layer",dose:"<b>1</b> Grand Soir au cou · <b>1</b> Side Effect au torse",ch:["ambré","vanillé","boozy"],why:"Cohérent : ambre, vanille et rhum.",res:"Chaleureux et sensuel.",risk:"Redondant et lourd. Grand froid seulement.",occ:["soir"],wx:["froid"]},
+ {id:"j1",a:"LSR",b:"MT",kind:"layer",dose:"<b>1</b> Les Sables Roses au torse · <b>1</b> Musk Therapy au cou",ch:["floral","boisé","propre"],why:"Le musc adoucit l'oud et garde la rose fraîche.",res:"Rose-oud élégante, proche de la peau.",risk:"Les Sables Roses projette fort : jamais plus d'1 spray.",occ:["jumua","soir","rdv"],wx:["froid","doux"]},
+ {id:"j2",a:"ON",b:"MT",kind:"layer",dose:"<b>1</b> Ombre Nomade sur les vêtements · <b>2</b> Musk Therapy au cou",ch:["boisé","fumé","propre"],why:"L'encens et l'oud rappellent le bakhour, le musc garde l'ensemble propre.",res:"Oud et encens adoucis par un musc propre.",risk:"Ombre Nomade reste très présent : sur les vêtements uniquement.",occ:["jumua","soir"],wx:["froid","doux"]},
+ {id:"o1",a:"LSR",b:"Mega",kind:"orig",dose:"<b>1</b> Les Sables Roses au torse · <b>1</b> Megamare sur les vêtements",ch:["floral","marin","ambré"],why:"Ils partagent une facette ambre gris / ambrox.",res:"Une rose saline, en bord de mer.",risk:"Deux monstres : 1 spray chacun, jamais plus.",occ:["soir","repos"],wx:["doux","chaud"]},
+ {id:"o2",a:"Mega",b:"ON",kind:"orig",dose:"<b>1</b> Megamare sur les vêtements · <b>1</b> Ombre Nomade au torse",ch:["marin","fumé","boisé"],why:"Contraste frais et chaud.",res:"Bois flotté et encens.",risk:"Risque élevé de dissonance : teste d'abord sur les poignets.",occ:["soir"],wx:["doux"]},
+ {id:"o4",a:"VT",b:"FN",kind:"orig",dose:"<b>1</b> Velvet Tonka au torse · <b>1</b> Fleur Narcotique au cou",ch:["gourmand","floral","fruité"],why:"Amande, pêche et fleurs blanches.",res:"Tendre et lumineux.",risk:"Effet bonbon possible.",occ:["cours","rdv","repos"],wx:["doux"]},
+ {id:"o5",a:"FN",b:"AL",kind:"orig",dose:"<b>1</b> Fleur Narcotique au cou · <b>1</b> African Leather au torse",ch:["floral","cuiré","épicé"],why:"Fleur fruitée contre daim épicé.",res:"Un vrai contraste, original.",risk:"Le cumin et la pêche peuvent se heurter. Très subjectif.",occ:["soir","repos"],wx:["doux"]},
+ {id:"o6",a:"GF",b:"AL",kind:"orig",dose:"<b>1</b> Gentle Fluidity Gold au cou · <b>1</b> African Leather au torse",ch:["cuiré","vanillé","épicé"],why:"La vanille et la muscade du Gold arrondissent le cumin et la cardamome.",res:"Un cuir doux et vanillé, plus portable qu'African Leather seul.",risk:"Si le cumin domine sur ta peau, passe African Leather sur les vêtements.",occ:["soir","repos"],wx:["froid","doux"]},
+ {id:"s1",a:"MT",kind:"solo",dose:"<b>2</b> sprays, cou et torse",ch:["propre","musqué"],why:"Le plus sûr pour une salle fermée.",res:"Bulle propre à un bras de distance.",occ:["cours","jumua","repos"],wx:["froid","doux","chaud"]},
+ {id:"s2",a:"FN",kind:"solo",dose:"<b>2</b> sprays, cou et torse",ch:["floral","fruité"],why:"Lumineux sans envahir.",res:"Fruité-floral agréable de près.",occ:["cours","repos"],wx:["doux","chaud"]},
+ {id:"s3",a:"GF",kind:"solo",dose:"<b>1 à 2</b> sprays, cou et torse",ch:["vanillé","musqué"],why:"Chic, doux et lisible.",res:"Vanille musquée élégante.",occ:["cours","jumua","repos","rdv"],wx:["froid","doux"]},
+ {id:"s4",a:"GS",kind:"solo",dose:"<b>1 à 2</b> sprays, cou",ch:["ambré"],why:"Souvent le plus chic seul.",res:"Ambre résineux, élégant.",occ:["soir","rdv","jumua"],wx:["froid","doux"]},
+ {id:"s5",a:"ON",kind:"solo",dose:"<b>1</b> spray, sur les vêtements",ch:["fumé","boisé"],why:"Composition complète, rien à ajouter.",res:"Oud fumé, sombre.",occ:["soir","jumua"],wx:["froid"]},
+ {id:"s6",a:"PoaL",kind:"solo",dose:"<b>1</b> spray, torse",ch:["floral","épicé"],why:"Déjà très riche.",res:"Rose sombre opulente.",occ:["soir","rdv"],wx:["froid"]},
+ {id:"s7",a:"LSR",kind:"solo",dose:"<b>1</b> spray, torse",ch:["floral","boisé"],why:"Contraste déjà construit dedans.",res:"Rose-oud lumineuse.",occ:["soir","rdv","jumua"],wx:["froid","doux"]},
+ {id:"s8",a:"AT",kind:"solo",dose:"<b>1</b> spray, torse",ch:["floral","sucré"],why:"Projection énorme.",res:"Rose-oud safranée et sucrée.",occ:["soir"],wx:["froid"]},
+ {id:"s9",a:"OB",kind:"solo",dose:"<b>1</b> spray, torse",ch:["floral","gourmand"],why:"Plus rond qu'Arabians Tonka.",res:"Rose-oud pralinée.",occ:["soir"],wx:["froid"]},
+ {id:"s10",a:"Mega",kind:"solo",dose:"<b>1</b> spray, sur les vêtements",ch:["marin"],why:"Un spray tient la journée.",res:"Mer, sel, minéral.",occ:["repos"],wx:["chaud"]},
+ {id:"s11",a:"Marfa",kind:"solo",dose:"<b>1 à 2</b> sprays, cou",ch:["floral","crémeux"],why:"Solaire et crémeux.",res:"Fleur blanche sous le soleil.",occ:["rdv","repos"],wx:["doux","chaud"]},
+ {id:"s12",a:"SE",kind:"solo",dose:"<b>1 à 2</b> sprays, torse",ch:["boozy","gourmand"],why:"Chaud et facile le soir.",res:"Rhum, tabac, vanille.",occ:["soir","rdv"],wx:["froid"]},
+ {id:"s13",a:"AL",kind:"solo",dose:"<b>1</b> spray, torse",ch:["cuiré","épicé"],why:"Caractère fort, se suffit à lui-même.",res:"Daim épicé.",occ:["soir"],wx:["froid","doux"]},
+ {id:"s14",a:"NPM",kind:"solo",dose:"<b>1 à 2</b> sprays, cou",ch:["sucré","ambré"],why:"Meilleur seul ou avec Musk Therapy.",res:"Sucré, efficace.",occ:["soir","repos"],wx:["froid","doux"]}
+];
+const AVOID=[
+ {a:"SE",b:"NPM",why:"Cannelle et sucre en double : écœurant."},
+ {a:"OB",b:"VT",why:"Praliné et vanille sur tonka et vanille : trop sucré, aucun contraste."},
+ {a:"ON",b:"OB",why:"Oud sur oud, illisible."},
+ {a:"ON",b:"LSR",why:"Oud sur oud, aucun contraste."},
+ {a:"AT",b:"OB",why:"Presque le même parfum : rose-oud safranée sucrée."},
+ {a:"AT",b:"GF",why:"Avec le Gold, vanille et sucre en double."},
+ {a:"PoaL",b:"LSR",why:"Rose sur rose, étouffant."},
+ {a:"PoaL",b:"AT",why:"Rose et safran en double, beaucoup trop lourd."},
+ {a:"AT",b:"VT",why:"Sucre sur sucre."},
+ {a:"AT",b:"SE",why:"Sucre et épices en surcharge."},
+ {a:"Mega",b:"GS",why:"Marin contre ambre résineux : dissonance."},
+ {a:"Mega",b:"SE",why:"Marin contre boozy, deux parfums très puissants."},
+ {a:"Mega",b:"AT",why:"Deux monstres qui ne parlent pas la même langue."},
+ {a:"AL",b:"ON",why:"Fumée, cumin et oud s'additionnent : résultat boueux."},
+ {a:"GF",b:"SE",why:"Avec le Gold, le contraste est faible : vanille sur vanille.",subj:true},
+ {a:"Marfa",b:"FN",why:"Beaucoup de fleurs, mais ça peut plaire.",subj:true},
+ {a:"OB",b:"GS",why:"Fonctionne, mais tend vers l'écœurant.",subj:true}
+];
+
+/* ===== état ===== */
+const KEY="sillages-v2";
+let S={wx:"doux",occ:["cours","cours","cours","cours","jumua","soir","repos"],picks:[],tab:"semaine",jumua:true,worn:[],fav:[],spray:null};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+if(!S.jumua){S.occ[4]="jumua";if(S.picks)S.picks[4]=null;S.jumua=true;}
+S.worn=S.worn||[];S.fav=S.fav||[];
+S.custom=S.custom||{perfumes:{},combos:[]};S.custom.perfumes=S.custom.perfumes||{};S.custom.combos=S.custom.combos||[];S.removed=S.removed||[];
+const BASE_C=C.slice(),BASE_AVOID=AVOID.slice();
+const FAM={musc:{l:"Musqué",m:"rings",c:["#6F86C2","#B49AD8"]},floral:{l:"Floral",m:"petals",c:["#D9668C","#F3A46B"]},oud:{l:"Boisé, oud, fumé",m:"smoke",c:["#2E2230","#7A4458"]},marin:{l:"Frais, marin",m:"waves",c:["#0C4F6B","#2BA3A8"]},cuir:{l:"Cuir, épicé",m:"grain",c:["#4E2C1A","#9C6B3C"]},ambre:{l:"Ambré, gourmand",m:"dots",c:["#A85A16","#E2A33C"]}};
+function isActive(k){return !!P[k]&&!S.removed.includes(k);}
+function rebuild(){
+  Object.assign(P,S.custom.perfumes);
+  const cc=[...BASE_C,...S.custom.combos].filter(c=>isActive(c.a)&&(!c.b||isActive(c.b)));C.length=0;C.push(...cc);
+  const av=BASE_AVOID.filter(x=>isActive(x.a)&&isActive(x.b));AVOID.length=0;AVOID.push(...av);
+}
+rebuild();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
+
+const nm=k=>P[k].n;
+const label=c=>c.b?`${nm(c.a)} + ${nm(c.b)}`:nm(c.a);
+const byId=id=>C.find(c=>c.id===id);
+const kindLbl={top:"Top 10",layer:"Layering",orig:"Original",solo:"Seul"};
+const pad=n=>String(n).padStart(2,"0");
+const dkey=(d=new Date())=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const todayIdx=()=>(new Date().getDay()+6)%7;
+const DAYS=["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
+
+/* ===== pochettes olfactives ===== */
+function hash(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const W=420;
+const MOTIF={
+ rings(x,r,a){const cx=W*(.25+.5*r()),cy=W*(.25+.5*r());for(let i=1;i<16;i++){x.beginPath();x.arc(cx,cy,i*W*.055,0,7);x.strokeStyle=`rgba(255,255,255,${a*(.5-i*.028)})`;x.lineWidth=1+r()*2.4;x.stroke();}},
+ petals(x,r,a){for(let f=0;f<3;f++){const cx=W*(.15+.7*r()),cy=W*(.15+.7*r()),R=W*(.12+.14*r()),n=5+Math.floor(r()*3),rot=r()*6;x.save();x.translate(cx,cy);for(let k=0;k<n;k++){x.save();x.rotate(rot+k*Math.PI*2/n);x.beginPath();x.ellipse(R*.55,0,R*.55,R*.23,0,0,7);x.fillStyle=`rgba(255,255,255,${a*.16})`;x.fill();x.strokeStyle=`rgba(255,255,255,${a*.4})`;x.lineWidth=1.4;x.stroke();x.restore();}x.beginPath();x.arc(0,0,R*.12,0,7);x.fillStyle=`rgba(255,255,255,${a*.45})`;x.fill();x.restore();}},
+ smoke(x,r,a){x.save();x.shadowColor="rgba(255,255,255,.45)";x.shadowBlur=18;for(let k=0;k<7;k++){let px=W*(.1+.8*r()),py=W*1.05;x.beginPath();x.moveTo(px,py);for(let s=0;s<4;s++){const nx=px+(r()-.5)*W*.5,ny=py-W*(.22+r()*.1);x.bezierCurveTo(px+(r()-.5)*W*.4,py-W*.1,nx+(r()-.5)*W*.4,ny+W*.1,nx,ny);px=nx;py=ny;}x.strokeStyle=`rgba(255,255,255,${a*(.18+r()*.18)})`;x.lineWidth=2+r()*7;x.stroke();}x.restore();},
+ waves(x,r,a){const f=1+r()*1.5,ph=r()*6;for(let k=0;k<15;k++){const y0=W*(.06+k*.065);x.beginPath();for(let px=0;px<=W;px+=6){const y=y0+Math.sin(px/W*Math.PI*2*f+ph+k*.45)*W*.03;px?x.lineTo(px,y):x.moveTo(px,y);}x.strokeStyle=`rgba(255,255,255,${a*(.15+.25*(k%3===0))})`;x.lineWidth=k%3===0?2.6:1.3;x.stroke();}},
+ grain(x,r,a){for(let i=0;i<520;i++){const px=r()*W,py=r()*W,l=5+r()*12,an=-.7+(r()-.5)*.5;x.beginPath();x.moveTo(px,py);x.lineTo(px+Math.cos(an)*l,py+Math.sin(an)*l);x.strokeStyle=`rgba(255,255,255,${a*(.07+r()*.12)})`;x.lineWidth=1;x.stroke();}for(let i=0;i<5;i++){x.beginPath();const y=W*(.1+r()*.8);x.moveTo(0,y);x.quadraticCurveTo(W*.5,y+(r()-.5)*W*.3,W,y+(r()-.5)*W*.2);x.strokeStyle=`rgba(255,255,255,${a*.22})`;x.setLineDash([3,6]);x.lineWidth=1.6;x.stroke();x.setLineDash([]);}},
+ dots(x,r,a){for(let i=0;i<30;i++){const R=W*(.01+Math.pow(r(),2.2)*.09);x.beginPath();x.arc(r()*W,r()*W,R,0,7);x.fillStyle=`rgba(255,255,255,${a*(.08+r()*.16)})`;x.fill();if(R>W*.04){x.strokeStyle=`rgba(255,255,255,${a*.35})`;x.lineWidth=1.2;x.stroke();}}}
+};
+const artCache=new Map();
+function artURL(a,b){
+  const key=a+"|"+(b||"");if(artCache.has(key))return artCache.get(key);
+  let url="";
+  try{
+    const cv=document.createElement("canvas");cv.width=cv.height=W;const x=cv.getContext("2d");
+    const ca=P[a].c,cb=b?P[b].c:ca;
+    const g=x.createLinearGradient(0,0,W,W);g.addColorStop(0,ca[0]);g.addColorStop(.46,ca[1]);g.addColorStop(.54,b?cb[1]:ca[1]);g.addColorStop(1,b?cb[0]:ca[0]);
+    x.fillStyle=g;x.fillRect(0,0,W,W);
+    const r=rng(hash(key));
+    MOTIF[P[a].m](x,r,1);
+    if(b)MOTIF[P[b].m](x,r,.7);
+    const v=x.createRadialGradient(W*.3,W*.25,W*.05,W*.5,W*.5,W*.8);v.addColorStop(0,"rgba(255,255,255,.14)");v.addColorStop(1,"rgba(0,0,0,.18)");x.fillStyle=v;x.fillRect(0,0,W,W);
+    for(let i=0;i<1400;i++){x.fillStyle=`rgba(255,255,255,${r()*.05})`;x.fillRect(r()*W,r()*W,1,1);}
+    url=cv.toDataURL("image/jpeg",.86);
+  }catch(e){url="";}
+  artCache.set(key,url);return url;
+}
+function artBg(a,b){const u=artURL(a,b);const ca=P[a].c,cb=b?P[b].c:ca;return u?`background-image:url(${u})`:`background:linear-gradient(135deg,${ca[0]},${cb[1]})`;}
+function art(c,opts={}){
+  return `<div class="art" style="${artBg(c.a,c.b)}">${opts.kind!==false?`<span class="kind">${c.custom?"Perso":c.kind==="top"?"Top 10":kindLbl[c.kind]}</span>`:""}${c.kind==="top"&&opts.num!==false?`<span class="num">${c.rank}</span>`:""}</div>`;
+}
+const thumb=c=>`<div class="art" style="${artBg(c.a,c.b)}"></div>`;
+const pThumb=k=>`<div class="art" style="${artBg(k)}"></div>`;
+
+/* ===== dosage, zones, sillage ===== */
+function target(c){return [...c.dose.matchAll(/<b>(\d+)/g)].reduce((s,m)=>s+ +m[1],0)||2;}
+function zones(c){const d=c.dose;const z=[];if(/cou/.test(d))z.push("cou");if(/torse/.test(d))z.push("torse");if(/vêtements|t-shirt/.test(d))z.push("vêt");return z.length?z:["cou"];}
+function level(c){const m=Math.max(P[c.a].pow,c.b?P[c.b].pow:0);return m<=3?1:m===4?2:3;}
+const LV=["Proche de la peau","À un bras","Toute la pièce"];
+const ZN={cou:"cou",torse:"torse",vêt:"vêtements"};
+function silSVG(c){
+  const lv=level(c),z=zones(c);
+  const ring=i=>`<circle cx="70" cy="70" r="${30+i*16}" fill="none" stroke="${i<lv?"var(--accent)":"var(--sep)"}" stroke-width="${i<lv?2:1.2}" ${i<lv?"":'stroke-dasharray="3 4"'} opacity="${i<lv?1-i*.22:1}"/>`;
+  const dot=(on,x,y)=>on?`<circle cx="${x}" cy="${y}" r="5" fill="var(--accent)" stroke="var(--cell)" stroke-width="2"/>`:"";
+  return `<svg viewBox="0 0 140 120" aria-hidden="true">${[2,1,0].map(ring).join("")}
+    <circle cx="70" cy="46" r="12" fill="var(--label2)" opacity=".35"/>
+    <path d="M44 120 C44 82 54 66 70 64 C86 66 96 82 96 120 Z" fill="var(--label2)" opacity=".35"/>
+    ${dot(z.includes("cou"),70,64)}${dot(z.includes("torse"),70,86)}${z.includes("vêt")?`<rect x="81" y="94" width="10" height="10" rx="2" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="86" cy="99" r="2.6" fill="var(--accent)"/>`:""}
+  </svg>`;
+}
+function silBlock(c){return `<div class="sil">${silSVG(c)}<div><p class="k" style="margin:0">Sillage</p><p class="lv">${LV[level(c)-1]}</p><p class="zn">Sur : ${zones(c).map(z=>ZN[z]).join(", ")}</p></div></div>`;}
+
+/* ===== semaine ===== */
+function recentWorn(days=6){const lim=new Date();lim.setDate(lim.getDate()-days);const k=dkey(lim);return new Set(S.worn.filter(w=>w.d>=k&&w.d!==dkey()).map(w=>w.id));}
+function candidates(o,w){let l=C.filter(c=>c.occ.includes(o)&&c.wx.includes(w));return l.length?l:C.filter(c=>c.occ.includes(o));}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickFor(i,used){
+  const recent=recentWorn();const pool=candidates(S.occ[i],S.wx);
+  const fresh=pool.filter(c=>!recent.has(c.id));const base=fresh.length?fresh:pool;
+  const ord=[...shuffle(base.filter(c=>c.kind!=="solo")),...shuffle(base.filter(c=>c.kind==="solo"))];
+  const p=ord.find(c=>!used.has(c.id))||ord[0];return p?p.id:null;
+}
+function generate(){const used=new Set();S.picks=S.occ.map((_,i)=>{const id=pickFor(i,used);used.add(id);return id;});save();renderWeek();}
+function change(i){
+  const pool=candidates(S.occ[i],S.wx);const used=new Set(S.picks.filter((_,j)=>j!==i));
+  const cur=pool.findIndex(c=>c.id===S.picks[i]);
+  for(let s=1;s<=pool.length;s++){const c=pool[(cur+s)%pool.length];if(!used.has(c.id)||s===pool.length){S.picks[i]=c.id;break;}}
+  save();renderWeek();
+}
+const isWornToday=id=>S.worn.some(w=>w.d===dkey()&&w.id===id);
+function sprayState(id){const n=(S.spray&&S.spray.d===dkey()&&S.spray.id===id)?S.spray.n:0;return n;}
+function sprayLabel(c){const n=sprayState(c.id),t=target(c);
+  if(n===0)return {cls:"spray",txt:"Maintiens pour vaporiser",sub:`0 sur ${t}`};
+  if(n<t)return {cls:"spray",txt:"Encore",sub:`${n} sur ${t}`};
+  if(n===t)return {cls:"done",txt:"Dose atteinte",sub:`${n} sur ${t}`};
+  return {cls:"over",txt:"C'est assez",sub:`${n} sur ${t}`};}
+
+const bottle=(c)=>`<svg viewBox="0 0 120 172" role="img" aria-label="Flacon du jour">
+  <defs><clipPath id="bcl"><rect x="12" y="44" width="96" height="124" rx="20"/></clipPath></defs>
+  <rect x="44" y="4" width="32" height="26" rx="5" fill="rgba(20,16,12,.82)"/>
+  <rect x="47" y="7" width="6" height="20" rx="3" fill="rgba(255,255,255,.18)"/>
+  <rect x="51" y="30" width="18" height="15" fill="rgba(255,255,255,.55)"/>
+  <g clip-path="url(#bcl)">
+    <image href="${artURL(c.a,c.b)}" x="-30" y="34" width="180" height="180" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="12" y="44" width="96" height="124" fill="url(#gls)"/>
+    <rect x="20" y="52" width="10" height="104" rx="5" fill="rgba(255,255,255,.28)"/>
+  </g>
+  <defs><linearGradient id="gls" x1="0" x2="1"><stop offset="0" stop-color="rgba(255,255,255,.16)"/><stop offset=".5" stop-color="rgba(255,255,255,0)"/><stop offset="1" stop-color="rgba(0,0,0,.18)"/></linearGradient></defs>
+  <rect x="12" y="44" width="96" height="124" rx="20" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+</svg>`;
+
+function renderWeek(){
+  const t=todayIdx(), c=byId(S.picks[t]);
+  const dateStr=new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});
+  const v=document.getElementById("v-semaine");
+  let hero="";
+  if(c){const sl=sprayLabel(c),worn=isWornToday(c.id);
+    hero=`<section class="today" aria-label="Flacon du jour">
+      <div class="today-bg" style="${artBg(c.a,c.b)}"></div>
+      <div class="today-in">
+        <p class="t-eyebrow">Flacon du jour · ${OCC[S.occ[t]]}</p>
+        <div class="bottle-wrap">${bottle(c)}<div class="mist" id="mist"></div></div>
+        <h2 class="t-name">${nm(c.a)}${c.b?`<span>+ ${nm(c.b)}</span>`:""}</h2>
+        <p class="t-res">${c.res}</p>
+        <div class="t-dose">${c.dose.replace(/<\/?b>/g,"")}</div>
+        <div class="t-actions">
+          <button class="t-btn ${sl.cls}" id="sprayBtn">${sl.txt}<small>${sl.sub}</small></button>
+          <button class="t-btn ${worn?"done":""}" id="wornBtn">${worn?"Porté ✓":"Porté aujourd'hui"}<small>${worn?"Touche pour annuler":"Ajouter à l'historique"}</small></button>
+        </div>
+        <div class="t-links"><button class="t-link" data-pick="${t}">Choisir moi-même</button><button class="t-link" data-day="${t}">Voir la fiche</button></div>
+      </div>
+    </section>`;}
+  v.innerHTML=`<div class="brand">${LOGO}<span>Sillages</span></div><p class="eyebrow">${dateStr}</p><h1 class="large" data-title="Aujourd'hui">Aujourd'hui</h1>${hero}
+    <div class="sec"><h2>Météo de la semaine</h2></div>
+    <div class="seg">${Object.entries(WX).map(([k,l])=>`<button data-wx="${k}" aria-pressed="${S.wx===k}">${l}</button>`).join("")}</div>
+    <p class="foot">Froid : moins de 10 °C · Doux : 10 à 20 °C · Chaud : plus de 20 °C</p>
+    <div class="sec"><h2>Ta semaine</h2><span>Touche un jour</span></div>
+    <div class="list">${DAYS.map((dn,i)=>{const cc=byId(S.picks[i]);return `
+      <button class="row ${i===t?"today-row":""}" data-day="${i}">
+        ${cc?thumb(cc):`<div class="art"></div>`}
+        <div class="tx"><div class="r0">${dn}${i===t?" · Aujourd'hui":""} · ${OCC[S.occ[i]]}</div>
+        <div class="r1">${cc?label(cc):"Aucune option"}</div>
+        <div class="r2">${cc?cc.dose.replace(/<[^>]+>/g,""):""}</div></div>
+        ${i===t&&cc&&isWornToday(cc.id)?`<span class="check">✓</span>`:""}${CHEV}
+      </button>`;}).join("")}</div>
+    <div class="btnrow" style="margin-top:14px"><button class="btn" id="regen">Nouvelle semaine</button></div>
+    <p class="foot">La nouvelle semaine évite ce que tu as porté ces 6 derniers jours. En cours : 2 sprays au total. Ton nez s'habitue en 20 minutes, ne rajoute pas parce que tu ne te sens plus.</p>`;
+  bindSpray();
+  observeTitle();
+}
+
+/* atomiseur */
+let holdT=null;
+function mist(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const m=document.getElementById("mist");if(!m)return;
+  for(let i=0;i<16;i++){const p=document.createElement("i");
+    p.style.setProperty("--dx",`${(Math.random()-.5)*130}px`);p.style.setProperty("--dy",`${-30-Math.random()*90}px`);p.style.setProperty("--s",(1.5+Math.random()*3.5).toFixed(2));
+    p.style.animationDelay=`${Math.random()*.12}s`;m.appendChild(p);setTimeout(()=>p.remove(),1500);}
+}
+function doSpray(){
+  const c=byId(S.picks[todayIdx()]);if(!c)return;
+  const n=sprayState(c.id)+1;S.spray={d:dkey(),id:c.id,n};save();mist();
+  const b=document.getElementById("sprayBtn"),sl=sprayLabel(c);
+  b.className=`t-btn ${sl.cls}`;b.innerHTML=`${sl.txt}<small>${sl.sub}</small>`;
+}
+function bindSpray(){
+  const b=document.getElementById("sprayBtn");if(!b)return;
+  const start=e=>{e.preventDefault();b.classList.add("holding");holdT=setTimeout(()=>{b.classList.remove("holding");doSpray();},380);};
+  const stop=()=>{b.classList.remove("holding");clearTimeout(holdT);};
+  b.addEventListener("pointerdown",start);["pointerup","pointerleave","pointercancel"].forEach(ev=>b.addEventListener(ev,stop));
+  b.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();doSpray();}});
+  b.addEventListener("contextmenu",e=>e.preventDefault());
+}
+function toggleWorn(id){
+  const k=dkey();const i=S.worn.findIndex(w=>w.d===k&&w.id===id);
+  if(i>=0)S.worn.splice(i,1);else S.worn.push({d:k,id});
+  S.worn=S.worn.slice(-120);save();
+}
+
+/* ===== combos ===== */
+const CHEV=`<svg class="chev" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 1l6 6-6 6"/></svg>`;
+const SEARCH=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>`;
+function shelf(list){if(!list.length)return `<p class="foot">Rien pour l'instant.</p>`;return `<div class="shelf">${list.map(c=>`<button class="tile" data-combo="${c.id}">${art(c)}<div class="t1">${label(c)}</div><div class="t2">${c.ch.slice(0,2).join(" · ")}</div></button>`).join("")}</div>`;}
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+let cq="";
+function renderCombos(){
+  const v=document.getElementById("v-combos");
+  v.innerHTML=`<p class="eyebrow">${C.length} associations</p><h1 class="large" data-title="Combos">Combos</h1>
+    <label class="search">${SEARCH}<input id="cq" type="search" placeholder="Parfum, note, ambiance…" value="${cq}" autocomplete="off"></label>
+    <div id="cbody"></div>`;
+  document.getElementById("cq").addEventListener("input",e=>{cq=e.target.value;renderCombosBody();});
+  renderCombosBody();observeTitle();
+}
+function renderCombosBody(){
+  const b=document.getElementById("cbody");const q=norm(cq.trim());
+  if(q){
+    const hits=C.filter(c=>norm([label(c),c.ch.join(" "),c.res,...(P[c.a].notes||[]),...(c.b?P[c.b].notes||[]:[]),c.occ.map(o=>OCC[o]).join(" ")].join(" ")).includes(q));
+    b.innerHTML=`<div class="sec"><h2>Résultats</h2><span>${hits.length}</span></div>`+(hits.length?`<div class="list">${hits.map(c=>`<button class="row" data-combo="${c.id}">${thumb(c)}<div class="tx"><div class="r1">${label(c)}</div><div class="r2">${c.res}</div></div>${CHEV}</button>`).join("")}</div>`:`<p class="empty">Aucun combo ne correspond. Essaie un nom de parfum ou une note comme « rose ».</p>`);
+    return;
+  }
+  const lay=C.filter(c=>c.kind!=="solo");
+  const favs=S.fav.map(byId).filter(Boolean);
+  const seen=new Set();const recent=[...S.worn].reverse().map(w=>byId(w.id)).filter(c=>c&&!seen.has(c.id)&&seen.add(c.id)).slice(0,10);
+  b.innerHTML=`
+    <div class="btnrow" style="margin:6px 0 0"><button class="btn ghost" id="addCombo">Créer mon combo</button></div>
+    ${C.some(c=>c.custom&&c.kind!=="solo")?`<div class="sec"><h2>Mes créations</h2></div>${shelf(C.filter(c=>c.custom&&c.kind!=="solo"))}`:""}
+    ${favs.length?`<div class="sec"><h2>Favoris</h2></div>${shelf(favs)}`:""}
+    ${recent.length?`<div class="sec"><h2>Récemment portés</h2></div>${shelf(recent)}`:""}
+    <div class="sec"><h2>Top 10</h2></div>${shelf(C.filter(c=>c.kind==="top"))}
+    <div class="sec"><h2>Cours & travail</h2></div>${shelf(lay.filter(c=>c.occ.includes("cours")))}
+    <div class="sec"><h2>Jumu'ah</h2><span>Musc, oud, rose</span></div>${shelf(C.filter(c=>c.occ.includes("jumua")))}
+    <div class="sec"><h2>Rendez-vous</h2></div>${shelf(lay.filter(c=>c.occ.includes("rdv")))}
+    <div class="sec"><h2>Soirée</h2></div>${shelf(lay.filter(c=>c.occ.includes("soir")))}
+    <div class="sec"><h2>Temps froid</h2></div>${shelf(lay.filter(c=>c.wx.includes("froid")))}
+    <div class="sec"><h2>Temps chaud</h2></div>${shelf(C.filter(c=>c.wx.includes("chaud")))}
+    <div class="sec"><h2>Signatures originales</h2></div>${shelf(C.filter(c=>c.kind==="orig"))}
+    <div class="sec"><h2>À porter seul</h2></div>${shelf(C.filter(c=>c.kind==="solo"))}`;
+}
+
+/* ===== parfums ===== */
+let pq="";
+function renderPerfumes(){
+  const v=document.getElementById("v-parfums");
+  v.innerHTML=`<p class="eyebrow">${Object.keys(P).filter(isActive).length} flacons</p><h1 class="large" data-title="Parfums">Parfums</h1>
+    <label class="search">${SEARCH}<input id="pq" type="search" placeholder="Rechercher" value="${pq}" autocomplete="off"></label>
+    <div class="btnrow" style="margin:4px 0 14px"><button class="btn" id="addPerf">Ajouter un parfum</button></div>
+    <div id="pbody"></div><div id="pextra"></div>`;
+  document.getElementById("pq").addEventListener("input",e=>{pq=e.target.value;renderPBody();});
+  renderPBody();renderPExtra();observeTitle();
+}
+function renderPBody(){
+  const q=norm(pq.trim());
+  const keys=Object.keys(P).filter(isActive).sort((a,b)=>P[a].n.localeCompare(P[b].n,"fr")).filter(k=>!q||norm([P[k].n,P[k].h,P[k].fam,...(P[k].notes||[]),...(P[k].pyr?Object.values(P[k].pyr):[])].join(" ")).includes(q));
+  document.getElementById("pbody").innerHTML=keys.length?`<div class="list">${keys.map(k=>`<button class="row" data-perf="${k}">${pThumb(k)}
+      <div class="tx"><div class="r1">${P[k].n}</div><div class="r2">${P[k].h} · ${P[k].fam}</div></div>${dots(P[k].pow)}${CHEV}</button>`).join("")}</div>`:`<p class="empty">Aucun parfum ne correspond.</p>`;
+}
+const dots=n=>`<span class="power" aria-label="Puissance ${n} sur 5">${[1,2,3,4,5].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span>`;
+
+/* ===== à éviter ===== */
+function renderAvoid(){
+  const v=document.getElementById("v-eviter");
+  const row=x=>`<div class="row wrapline" style="cursor:default"><span class="dot ${x.subj?"subj":""}"></span><div class="tx"><div class="r1">${nm(x.a)} + ${nm(x.b)}</div><div class="r2">${x.why}</div></div></div>`;
+  v.innerHTML=`<p class="eyebrow">${AVOID.length} associations</p><h1 class="large" data-title="À éviter">À éviter</h1>
+    <div class="sec"><h2>Risque réel</h2></div><div class="list">${AVOID.filter(x=>!x.subj).map(row).join("")}</div>
+    <div class="sec"><h2>Question de goût</h2></div><div class="list">${AVOID.filter(x=>x.subj).map(row).join("")}</div>`;
+  observeTitle();
+}
+
+/* ===== feuille ===== */
+const sheet=document.getElementById("sheet"),scrim=document.getElementById("scrim");
+let lastFocus=null;
+const HEART=on=>`<svg width="17" height="17" viewBox="0 0 24 24" fill="${on?"currentColor":"none"}" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>`;
+function openSheet(html,favId){
+  lastFocus=document.activeElement;
+  const fav=favId?S.fav.includes(favId):false;
+  sheet.innerHTML=`<div class="grab"></div><div class="stop">${favId?`<button class="iconbtn ${fav?"fav-on":""}" data-fav="${favId}" aria-label="${fav?"Retirer des favoris":"Ajouter aux favoris"}">${HEART(fav)}</button>`:"<span></span>"}<button class="iconbtn" id="xclose" aria-label="Fermer">✕</button></div>`+html;
+  scrim.classList.add("on");sheet.classList.add("on");sheet.scrollTop=0;document.getElementById("xclose").focus({preventScroll:true});
+}
+function closeSheet(){scrim.classList.remove("on");sheet.classList.remove("on");sheet.style.transform="";if(lastFocus)lastFocus.focus({preventScroll:true});}
+scrim.onclick=closeSheet;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet();});
+/* glisser pour fermer */
+let dy0=null,dy=0;
+sheet.addEventListener("touchstart",e=>{if(sheet.scrollTop<=0){dy0=e.touches[0].clientY;dy=0;}},{passive:true});
+sheet.addEventListener("touchmove",e=>{if(dy0===null)return;dy=e.touches[0].clientY-dy0;if(dy>0){sheet.classList.add("drag");sheet.style.transform=`translateY(${dy}px)`;e.preventDefault();}},{passive:false});
+sheet.addEventListener("touchend",()=>{if(dy0===null)return;sheet.classList.remove("drag");if(dy>110)closeSheet();else sheet.style.transform="";dy0=null;});
+
+function comboBody(c){
+  const ctx=[...c.occ.map(o=>OCC[o]),...c.wx.map(w=>WX[w])];
+  return `<div class="shead">${art(c)}<div><h3>${label(c)}</h3><p>${c.custom?"Ta création":c.kind==="top"?"Top 10 · n°"+c.rank:kindLbl[c.kind]}</p></div></div>
+    <div class="dose">${c.dose}</div>
+    ${silBlock(c)}
+    <div class="tags">${c.ch.map(x=>`<span>${x}</span>`).join("")}</div>
+    <div class="blk"><span class="k">Pourquoi</span><p>${c.why}</p></div>
+    <div class="blk"><span class="k">Résultat</span><p>${c.res}</p></div>
+    ${c.risk?`<div class="risk"><span class="k">Risque</span>${c.risk}</div>`:""}
+    <div class="blk"><span class="k">Quand</span><p>${ctx.join(" · ")}</p></div>`;
+}
+function openCombo(id){const c=byId(id);openSheet(comboBody(c)+`<div class="btnrow"><button class="btn ghost" data-wear="${id}">${isWornToday(id)?"Porté aujourd'hui ✓":"Je le porte aujourd'hui"}</button></div>`+(c.custom&&c.kind!=="solo"?`<button class="btn ghost danger full" style="margin-top:10px" data-delcombo="${id}">Supprimer ce combo</button>`:""),id);}
+function openDay(i){
+  const c=byId(S.picks[i]);
+  openSheet(`<p class="eyebrow" style="margin-top:0">${DAYS[i]}${i===todayIdx()?" · Aujourd'hui":""}</p>
+    <div class="seg" id="occSeg" data-i="${i}" style="margin:8px 0 16px">${Object.entries(OCC).map(([k,l])=>`<button data-occ="${k}" aria-pressed="${S.occ[i]===k}">${l}</button>`).join("")}</div>
+    ${S.occ[i]==="jumua"?`<p class="foot" style="margin:0 0 14px">À la mosquée, on prie épaule contre épaule : vise un sillage proche de la peau. Le plus puissant va sur les vêtements, le musc sur la peau.</p>`:""}
+    ${c?comboBody(c):"<p>Aucune option.</p>"}
+    <div class="btnrow"><button class="btn ghost" data-pick="${i}">Choisir moi-même</button><button class="btn" data-change="${i}">Autre idée</button></div>`,c&&c.id);
+}
+function openPerf(k){
+  const p=P[k];
+  const combos=C.filter(c=>c.b&&(c.a===k||c.b===k)).sort((x,y)=>(x.rank||99)-(y.rank||99));
+  const notes=p.pyr?`<dl class="pyr"><dt>Tête</dt><dd>${p.pyr.t}</dd><dt>Cœur</dt><dd>${p.pyr.c}</dd><dt>Fond</dt><dd>${p.pyr.f}</dd></dl>`:`<div class="tags" style="margin:0">${p.notes.map(n=>`<span>${n}</span>`).join("")}</div>`;
+  openSheet(`<div class="shead">${pThumb(k)}<div><h3>${p.n}</h3><p>${p.h}</p><p>Puissance ${dots(p.pow)}</p></div></div>
+    <div class="blk"><span class="k">Famille</span><p>${p.fam}</p></div>
+    <div class="blk"><span class="k">Notes · ${p.v?"vérifiées":"usuelles"}</span>${notes}${p.srcNote?`<p class="foot" style="margin:6px 0 0">${p.srcNote}</p>`:""}</div>
+    <div class="blk"><span class="k">Apporte au layering</span><p>${p.brings}</p></div>
+    <div class="sec" style="margin-top:18px"><h2 style="font-size:19px">Ses combos</h2></div>
+    ${combos.length?`<div class="list" style="background:var(--bg)">${combos.map(c=>`<button class="row" data-combo="${c.id}">${thumb(c)}<div class="tx"><div class="r1">${nm(c.a===k?c.b:c.a)}</div><div class="r2">${c.res}</div></div>${CHEV}</button>`).join("")}</div>`:`<p class="foot">${isActive(k)?"Plutôt à porter seul.":"Ses combos réapparaîtront si tu le remets dans ta collection."}</p>`}${perfActions(k)}`);
+}
+
+/* ===== choisir soi-même ===== */
+let pickerDay=0,pkq="";
+function openPicker(i){
+  pickerDay=i;pkq="";
+  openSheet(`<h3 class="ftitle">${i===todayIdx()?"Ce que je porte aujourd'hui":"Mon choix pour "+DAYS[i].toLowerCase()}</h3>
+    <label class="search">${SEARCH}<input id="pkq" type="search" placeholder="Parfum ou combo" autocomplete="off"></label>
+    <div id="pklist"></div>`);
+  document.getElementById("pkq").addEventListener("input",e=>{pkq=e.target.value;renderPickList();});
+  renderPickList();
+}
+function renderPickList(){
+  const q=norm(pkq.trim()),occ=S.occ[pickerDay],cur=S.picks[pickerDay];
+  const row=c=>`<button class="row" data-choose="${c.id}">${thumb(c)}<div class="tx"><div class="r1">${label(c)}</div><div class="r2">${c.dose.replace(/<[^>]+>/g,"")}</div></div>${c.id===cur?'<span class="check">✓</span>':""}</button>`;
+  const el=document.getElementById("pklist");if(!el)return;
+  if(q){const hits=C.filter(c=>norm(label(c)).includes(q));el.innerHTML=hits.length?`<div class="list" style="background:var(--bg)">${hits.map(row).join("")}</div>`:`<p class="empty">Aucun résultat.</p>`;return;}
+  const solos=C.filter(c=>c.kind==="solo"),lay=C.filter(c=>c.kind!=="solo");
+  const forOcc=lay.filter(c=>c.occ.includes(occ));
+  el.innerHTML=`<div class="sec" style="margin-top:14px"><h2 style="font-size:19px">Un seul parfum</h2></div><div class="list" style="background:var(--bg)">${solos.map(row).join("")}</div>
+    ${forOcc.length?`<div class="sec"><h2 style="font-size:19px">Combos ${OCC[occ]}</h2></div><div class="list" style="background:var(--bg)">${forOcc.map(row).join("")}</div>`:""}
+    <div class="sec"><h2 style="font-size:19px">Tous les combos</h2></div><div class="list" style="background:var(--bg)">${lay.filter(c=>!forOcc.includes(c)).map(row).join("")}</div>`;
+}
+function choose(id){
+  const i=pickerDay;const old=S.picks[i];
+  if(i===todayIdx()){const k=dkey();const w=S.worn.find(x=>x.d===k&&x.id===old);if(w)w.id=id;}
+  S.picks[i]=id;save();renderWeek();renderCombosBodySafe();closeSheet();
+}
+
+/* ===== gestion de la collection ===== */
+const clean=s=>String(s||"").replace(/[<>"]/g,"").trim();
+const selv=id=>[...document.querySelectorAll("#"+id+" [aria-pressed=\"true\"]")].map(b=>b.dataset.v);
+const ferr=m=>{const e=document.getElementById("fErr");if(e)e.textContent=m;};
+function refreshPicks(){const used=new Set();S.picks=S.picks.map((id,i)=>{const ok=id&&byId(id)&&!used.has(id);const nid=ok?id:pickFor(i,used);used.add(nid);return nid;});save();}
+function applyChange(){rebuild();refreshPicks();renderWeek();renderCombos();renderPerfumes();renderAvoid();}
+function perfActions(k){
+  const p=P[k];let h=`<div class="sec" style="margin-top:22px"><h2 style="font-size:19px">Ma collection</h2></div>`;
+  if(isActive(k))h+=`<button class="btn ghost danger full" data-remove="${k}">Je ne l'ai plus</button><p class="foot">Le parfum et ses combos disparaissent de l'app. Tu pourras le remettre plus tard.</p>`;
+  else h+=`<button class="btn full" data-restore="${k}">Remettre dans ma collection</button>`;
+  if(p.custom)h+=`<button class="btn ghost danger full" style="margin-top:10px" data-delete="${k}">Supprimer définitivement</button>`;
+  return h;
+}
+function renderPExtra(){
+  const el=document.getElementById("pextra");if(!el)return;
+  const rem=S.removed.filter(k=>P[k]);
+  el.innerHTML=`${rem.length?`<div class="sec"><h2>Plus dans ma collection</h2></div><div class="list">${rem.map(k=>`<button class="row" data-perf="${k}">${pThumb(k)}<div class="tx"><div class="r1">${P[k].n}</div><div class="r2">Touche pour le remettre</div></div>${CHEV}</button>`).join("")}</div>`:""}
+    <div class="sec"><h2>Sauvegarde</h2></div>
+    <div class="list" style="padding:12px 14px">
+      <p class="foot" style="margin:0 0 10px">Tes ajouts, ton historique et tes favoris restent sur ce téléphone. Copie ta sauvegarde pour les garder ou les transférer sur une autre version de l'app.</p>
+      <div class="btnrow" style="margin:0"><button class="btn ghost" id="bkCopy">Copier</button><button class="btn ghost" id="bkImport">Importer</button></div>
+      <textarea class="inp" id="bkText" rows="3" placeholder="Colle ici une sauvegarde, puis touche Importer"></textarea>
+      <p class="foot" id="bkMsg" style="margin:6px 0 0"></p>
+    </div>`;
+}
+function openAddPerf(){
+  openSheet(`<h3 class="ftitle">Ajouter un parfum</h3>
+    <div class="field"><label for="fN">Nom</label><input id="fN" class="inp" maxlength="40" placeholder="ex : Baccarat Rouge 540" autocomplete="off"></div>
+    <div class="field"><label for="fH">Maison</label><input id="fH" class="inp" maxlength="40" placeholder="ex : Maison Francis Kurkdjian" autocomplete="off"></div>
+    <div class="field"><span class="flabel">Famille</span><div class="chips pick1" id="fFam">${Object.entries(FAM).map(([k,f],i)=>`<button class="chipt" data-v="${k}" aria-pressed="${i===0}">${f.l}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Puissance</span><div class="seg pick1" id="fPow">${[1,2,3,4,5].map(n=>`<button data-v="${n}" aria-pressed="${n===3}">${n}</button>`).join("")}</div><p class="foot" style="margin:6px 0 0">1 : très discret · 3 : moyen · 5 : remplit une pièce</p></div>
+    <div class="field"><label for="fNotes">Notes principales</label><input id="fNotes" class="inp" placeholder="ex : safran, jasmin, ambre, cèdre" autocomplete="off"></div>
+    <div class="field"><span class="flabel">Quand le porter</span><div class="chips" id="fOcc">${Object.entries(OCC).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k==="soir"}">${l}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Météo</span><div class="chips" id="fWx">${Object.entries(WX).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k!=="chaud"}">${l}</button>`).join("")}</div></div>
+    <p class="err" id="fErr"></p>
+    <button class="btn full" id="savePerf">Ajouter à ma collection</button>
+    <p class="foot">Il apparaîtra comme parfum à porter seul, et tu pourras l'utiliser dans tes propres combos. Pour des layerings experts, donne-moi son nom dans Claude.</p>`);
+}
+function savePerf(){
+  const n=clean(document.getElementById("fN").value),h=clean(document.getElementById("fH").value);
+  const fam=selv("fFam")[0]||"musc",pow=+(selv("fPow")[0]||3),occ=selv("fOcc"),wx=selv("fWx");
+  const notes=clean(document.getElementById("fNotes").value).split(",").map(s=>s.trim()).filter(Boolean).slice(0,12);
+  if(!n){ferr("Donne un nom au parfum.");return;}
+  if(!occ.length||!wx.length){ferr("Choisis au moins une occasion et une météo.");return;}
+  if(Object.keys(P).some(k=>isActive(k)&&P[k].n.toLowerCase()===n.toLowerCase())){ferr("Ce parfum est déjà dans ta collection.");return;}
+  const k="u"+Date.now().toString(36),f=FAM[fam];
+  S.custom.perfumes[k]={n,h:h||"Ma collection",fam:f.l,pow,v:false,m:f.m,c:f.c,notes:notes.length?notes:["notes à compléter"],brings:"Ajouté par toi. Demande-moi ses meilleurs layerings dans Claude.",custom:true};
+  S.custom.combos.push({id:"us"+k,a:k,kind:"solo",custom:true,dose:pow>=4?"<b>1</b> spray, torse":"<b>2</b> sprays, cou et torse",ch:[f.l.split(",")[0].toLowerCase()],why:"Ajouté par toi.",res:notes.length?notes.slice(0,3).join(", "):f.l,occ,wx});
+  save();applyChange();openPerf(k);
+}
+const ZL={cou:"au cou",torse:"au torse",vet:"sur les vêtements"};
+function openAddCombo(){
+  const keys=Object.keys(P).filter(isActive).sort((a,b)=>P[a].n.localeCompare(P[b].n,"fr"));
+  const opts=sel=>keys.map(k=>`<option value="${k}" ${k===sel?"selected":""}>${P[k].n}</option>`).join("");
+  const part=(i,def)=>`<div class="field"><label for="f${i}">Parfum ${i==="A"?1:2}</label><select id="f${i}" class="inp">${opts(def)}</select>
+    <div class="duo"><div class="seg pick1" id="fD${i}"><button data-v="1" aria-pressed="true">1 spray</button><button data-v="2" aria-pressed="false">2</button></div>
+    <div class="seg pick1" id="fZ${i}"><button data-v="cou" aria-pressed="${i==="A"}">Cou</button><button data-v="torse" aria-pressed="${i==="B"}">Torse</button><button data-v="vet" aria-pressed="false">Habits</button></div></div></div>`;
+  openSheet(`<h3 class="ftitle">Créer mon combo</h3>${part("A",keys[0])}${part("B",keys[1])}
+    <div class="risk" id="fWarn" hidden></div>
+    <div class="field"><span class="flabel">Quand le porter</span><div class="chips" id="fOcc">${Object.entries(OCC).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k==="soir"}">${l}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Météo</span><div class="chips" id="fWx">${Object.entries(WX).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k!=="chaud"}">${l}</button>`).join("")}</div></div>
+    <div class="field"><label for="fNote">Ton ressenti (facultatif)</label><input id="fNote" class="inp" maxlength="120" placeholder="ex : boisé et doux, parfait le soir" autocomplete="off"></div>
+    <p class="err" id="fErr"></p>
+    <button class="btn full" id="saveCombo">Créer le combo</button>
+    <p class="foot">Teste d'abord 1 spray de chaque sur deux zones différentes avant de l'adopter.</p>`);
+  const chk=()=>{const a=document.getElementById("fA").value,b=document.getElementById("fB").value,w=document.getElementById("fWarn");const av=BASE_AVOID.find(x=>(x.a===a&&x.b===b)||(x.a===b&&x.b===a));w.hidden=!av;if(av)w.innerHTML=`<span class="k">${av.subj?"Question de goût":"Association à risque"}</span>${av.why}`;};
+  document.getElementById("fA").onchange=chk;document.getElementById("fB").onchange=chk;chk();
+}
+function saveCombo(){
+  const a=document.getElementById("fA").value,b=document.getElementById("fB").value;
+  if(a===b){ferr("Choisis deux parfums différents.");return;}
+  const occ=selv("fOcc"),wx=selv("fWx");if(!occ.length||!wx.length){ferr("Choisis au moins une occasion et une météo.");return;}
+  const da=selv("fDA")[0]||"1",db=selv("fDB")[0]||"1",za=selv("fZA")[0]||"cou",zb=selv("fZB")[0]||"torse";
+  const av=BASE_AVOID.find(x=>(x.a===a&&x.b===b)||(x.a===b&&x.b===a));const note=clean(document.getElementById("fNote").value);
+  const fw=f=>f.split(/[ ,]/)[0].toLowerCase();
+  const id="uc"+Date.now().toString(36);
+  S.custom.combos.push({id,a,b,kind:"layer",custom:true,dose:`<b>${da}</b> ${P[a].n} ${ZL[za]} · <b>${db}</b> ${P[b].n} ${ZL[zb]}`,ch:[...new Set([fw(P[a].fam),fw(P[b].fam)])],why:note||"Ta propre association.",res:`${P[a].fam} et ${P[b].fam.toLowerCase()}.`,risk:av?av.why:"",occ,wx});
+  save();applyChange();openCombo(id);
+}
+function backupCopy(){
+  const txt=JSON.stringify({v:1,custom:S.custom,removed:S.removed,fav:S.fav,worn:S.worn,occ:S.occ,wx:S.wx});
+  const ta=document.getElementById("bkText"),msg=document.getElementById("bkMsg");ta.value=txt;
+  const fallback=()=>{ta.focus();ta.select();msg.textContent="Sauvegarde affichée : sélectionne le texte et copie-le.";};
+  try{navigator.clipboard.writeText(txt).then(()=>{msg.textContent="Sauvegarde copiée. Garde-la dans tes Notes.";},fallback);}catch(e){fallback();}
+}
+function backupImport(){
+  const ta=document.getElementById("bkText"),msg=document.getElementById("bkMsg");
+  try{const d=JSON.parse(ta.value);if(!d||typeof d!=="object"||!d.custom)throw 0;
+    S.custom={perfumes:d.custom.perfumes||{},combos:d.custom.combos||[]};S.removed=d.removed||[];S.fav=d.fav||[];S.worn=d.worn||[];if(Array.isArray(d.occ)&&d.occ.length===7)S.occ=d.occ;if(d.wx)S.wx=d.wx;
+    save();applyChange();const m=document.getElementById("bkMsg");if(m)m.textContent="Sauvegarde importée.";
+  }catch(e){msg.textContent="Ce texte n'est pas une sauvegarde Sillages. Copie-la à nouveau depuis l'autre version.";}
+}
+
+/* ===== titre repliable ===== */
+const navbar=document.getElementById("navbar");let io=null;
+function observeTitle(){
+  if(!("IntersectionObserver" in window))return;
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target.closest(".view");if(v.hidden)return;navbar.textContent=e.target.dataset.title;navbar.classList.toggle("on",!e.isIntersecting&&e.boundingClientRect.top<0);}),{rootMargin:"-50px 0px 0px 0px"});
+  document.querySelectorAll(".large").forEach(t=>io.observe(t));
+}
+
+/* ===== onglets & événements ===== */
+function showTab(t){
+  S.tab=t;save();navbar.classList.remove("on");
+  document.querySelectorAll(".tabbar button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));
+  ["semaine","combos","parfums","eviter"].forEach(v=>document.getElementById("v-"+v).hidden=v!==t);
+  window.scrollTo(0,0);observeTitle();
+}
+document.querySelectorAll(".tabbar button").forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+
+document.addEventListener("click",e=>{
+  const t=e.target;
+  if(t.closest("#xclose")){closeSheet();return;}
+  if(t.closest("#sprayBtn"))return;
+  const pk=t.closest("[data-pick]");if(pk){openPicker(+pk.dataset.pick);return;}
+  const chz=t.closest("[data-choose]");if(chz){choose(chz.dataset.choose);return;}
+  const opt=t.closest("[data-v]");if(opt){const g=opt.parentElement;if(g.classList.contains("pick1"))g.querySelectorAll("[data-v]").forEach(b=>b.setAttribute("aria-pressed",b===opt));else opt.setAttribute("aria-pressed",opt.getAttribute("aria-pressed")!=="true");return;}
+  if(t.closest("#addPerf")){openAddPerf();return;}
+  if(t.closest("#savePerf")){savePerf();return;}
+  if(t.closest("#addCombo")){openAddCombo();return;}
+  if(t.closest("#saveCombo")){saveCombo();return;}
+  if(t.closest("#bkCopy")){backupCopy();return;}
+  if(t.closest("#bkImport")){backupImport();return;}
+  const arm=t.closest("[data-remove],[data-delete],[data-delcombo]");
+  if(arm&&!arm.dataset.armed){arm.dataset.armed="1";arm.textContent="Touche encore pour confirmer";return;}
+  const rm=t.closest("[data-remove]");if(rm){const k=rm.dataset.remove;if(!S.removed.includes(k))S.removed.push(k);save();applyChange();openPerf(k);return;}
+  const rs=t.closest("[data-restore]");if(rs){const k=rs.dataset.restore;S.removed=S.removed.filter(x=>x!==k);save();applyChange();openPerf(k);return;}
+  const dl=t.closest("[data-delete]");if(dl){const k=dl.dataset.delete;delete S.custom.perfumes[k];S.custom.combos=S.custom.combos.filter(c=>c.a!==k&&c.b!==k);S.removed=S.removed.filter(x=>x!==k);delete P[k];save();applyChange();closeSheet();return;}
+  const dc=t.closest("[data-delcombo]");if(dc){const id=dc.dataset.delcombo;S.custom.combos=S.custom.combos.filter(c=>c.id!==id);S.fav=S.fav.filter(x=>x!==id);save();applyChange();closeSheet();return;}
+  if(t.closest("#wornBtn")){const c=byId(S.picks[todayIdx()]);if(c){toggleWorn(c.id);renderWeek();renderCombosBodySafe();}return;}
+  const fv=t.closest("[data-fav]");if(fv){const id=fv.dataset.fav;const i=S.fav.indexOf(id);i>=0?S.fav.splice(i,1):S.fav.unshift(id);save();fv.classList.toggle("fav-on",i<0);fv.innerHTML=HEART(i<0);fv.setAttribute("aria-label",i<0?"Retirer des favoris":"Ajouter aux favoris");renderCombosBodySafe();return;}
+  const wr=t.closest("[data-wear]");if(wr){const id=wr.dataset.wear;toggleWorn(id);wr.textContent=isWornToday(id)?"Porté aujourd'hui ✓":"Je le porte aujourd'hui";renderWeek();renderCombosBodySafe();return;}
+  const d=t.closest("[data-day]");if(d){openDay(+d.dataset.day);return;}
+  const cb=t.closest("[data-combo]");if(cb){openCombo(cb.dataset.combo);return;}
+  const pf=t.closest("[data-perf]");if(pf){openPerf(pf.dataset.perf);return;}
+  const w=t.closest("[data-wx]");if(w){S.wx=w.dataset.wx;generate();return;}
+  if(t.closest("#regen")){generate();return;}
+  const ch=t.closest("[data-change]");if(ch){const i=+ch.dataset.change;change(i);openDay(i);return;}
+  const oc=t.closest("[data-occ]");if(oc){const i=+oc.closest("#occSeg").dataset.i;S.occ[i]=oc.dataset.occ;const used=new Set(S.picks.filter((_,j)=>j!==i));S.picks[i]=pickFor(i,used);save();renderWeek();openDay(i);return;}
+});
+function renderCombosBodySafe(){if(document.getElementById("cbody"))renderCombosBody();}
+
+/* ===== logo : erlenmeyer de labo ===== */
+function drawFlask(x,s){
+  const g=x.createLinearGradient(0,0,s,s);g.addColorStop(0,"#2A1A12");g.addColorStop(1,"#0E0A08");
+  x.fillStyle=g;x.fillRect(0,0,s,s);
+  const u=s/100;x.lineJoin="round";x.lineCap="round";
+  const flask=()=>{x.beginPath();x.moveTo(40*u,18*u);x.lineTo(40*u,40*u);x.lineTo(20*u,76*u);x.quadraticCurveTo(16*u,84*u,25*u,84*u);x.lineTo(75*u,84*u);x.quadraticCurveTo(84*u,84*u,80*u,76*u);x.lineTo(60*u,40*u);x.lineTo(60*u,18*u);};
+  x.save();flask();x.clip();
+  const lq=x.createLinearGradient(0,52*u,0,84*u);lq.addColorStop(0,"#F3C26B");lq.addColorStop(1,"#B5651D");
+  x.fillStyle=lq;x.beginPath();x.moveTo(0,56*u);x.quadraticCurveTo(25*u,52*u,50*u,56*u);x.quadraticCurveTo(75*u,60*u,100*u,55*u);x.lineTo(100*u,100*u);x.lineTo(0,100*u);x.fill();
+  x.fillStyle="rgba(255,255,255,.55)";[[42,72,3.2],[55,66,2.2],[48,62,1.6],[60,76,2.6]].forEach(([a,b,r])=>{x.beginPath();x.arc(a*u,b*u,r*u,0,7);x.fill();});
+  x.restore();
+  flask();x.strokeStyle="rgba(255,255,255,.92)";x.lineWidth=4*u;x.stroke();
+  x.beginPath();x.moveTo(35*u,18*u);x.lineTo(65*u,18*u);x.stroke();
+  x.fillStyle="rgba(243,194,107,.85)";[[46,10,2.4],[54,5,1.6],[58,12,1.3]].forEach(([a,b,r])=>{x.beginPath();x.arc(a*u,b*u,r*u,0,7);x.fill();});
+}
+const LOGO=(()=>{try{const cv=document.createElement("canvas");cv.width=cv.height=120;drawFlask(cv.getContext("2d"),120);return `<img src="${cv.toDataURL("image/png")}" alt="" width="30" height="30">`;}catch(e){return "";}})();
+try{
+  const cv=document.createElement("canvas");cv.width=cv.height=180;drawFlask(cv.getContext("2d"),180);
+  const url=cv.toDataURL("image/png");
+  [["apple-touch-icon"],["icon"]].forEach(([rel])=>{const l=document.createElement("link");l.rel=rel;l.href=url;l.sizes="180x180";document.head.appendChild(l);});
+}catch(e){}
+
+/* ===== démarrage ===== */
+if(!S.picks||S.picks.length!==7) generate(); else refreshPicks();
+renderWeek();renderCombos();renderPerfumes();renderAvoid();
+showTab(S.tab||"semaine");
+</script>
+
+</body>
+</html>
