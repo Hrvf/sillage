@@ -78,6 +78,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline
 .t-btn.done{background:rgba(76,195,138,.9);color:#fff}
 .t-btn.over{background:rgba(255,107,94,.92);color:#fff}
 .t-btn small{display:block;font-size:12px;font-weight:500;opacity:.75;margin-top:1px}
+.t-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
 .t-link{appearance:none;border:0;background:none;color:var(--on-art);font-size:14px;font-weight:600;opacity:.85;cursor:pointer;padding:6px}
 
 /* shelves */
@@ -164,6 +165,18 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline
 .dot.subj{background:var(--label2)}
 .wrapline .r2{white-space:normal}
 .empty{color:var(--label2);font-size:15px;padding:14px}
+.ftitle{font-family:var(--serif);font-size:24px;font-weight:700;margin:0 0 16px}
+.field{margin-bottom:16px}
+.field label,.flabel{display:block;font-size:12px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.inp{width:100%;box-sizing:border-box;border:0;background:var(--fill);border-radius:10px;padding:11px 12px;font-size:17px;color:var(--label);font-family:var(--ui);appearance:none}
+textarea.inp{font-size:14px;font-family:ui-monospace,Menlo,monospace;resize:vertical;margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chipt{appearance:none;border:0;background:var(--fill);border-radius:999px;padding:8px 13px;font-size:14px;font-weight:500;cursor:pointer}
+.chipt[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.btn.full{width:100%;display:block}
+.btn.danger{color:var(--warn)}
+.err{color:var(--warn);font-size:14px;margin:0 0 10px;min-height:1px}
 </style>
 </head>
 <body>
@@ -195,19 +208,19 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline
 /* ===== données ===== */
 const P={
  MT:{n:"Musk Therapy",h:"Initio",fam:"Musqué propre",pow:2,v:true,m:"rings",c:["#6F86C2","#B49AD8"],notes:["bergamote","mandarine","magnolia blanc","cassis","santal blanc","musc blanc","musc rose"],brings:"Un effet peau propre qui adoucit et aère n'importe quel parfum lourd."},
- FN:{n:"Fleur Narcotique",h:"Ex Nihilo",fam:"Floral fruité",pow:3,v:false,m:"petals",c:["#E86E94","#F3A46B"],notes:["bergamote","litchi","pêche","pivoine","jasmin","fleur d'oranger","muscs","mousse"],brings:"Lumière fruitée qui éclaire les roses et les ouds."},
- GF:{n:"Gentle Fluidity Gold",h:"Maison Francis Kurkdjian",fam:"Ambré vanillé musqué",pow:3,v:false,m:"rings",c:["#B9871F","#E7C467"],notes:["genièvre","muscade","coriandre","muscs","bois ambrés","vanille"],brings:"Vanille et bois ambrés, chaud et doux. Pont naturel vers les gourmands."},
- Marfa:{n:"Marfa",h:"Memo Paris",fam:"Floral blanc solaire",pow:3,v:false,m:"petals",c:["#E9873C","#F0C64B"],notes:["mandarine","tubéreuse","fleur d'oranger","ylang","agave","santal","vanille","musc"],brings:"Fleurs blanches crémeuses, très bon pont vers les gourmands."},
- VT:{n:"Velvet Tonka",h:"BDK Parfums",fam:"Gourmand poudré",pow:3,v:false,m:"dots",c:["#A06B42","#D7A67A"],notes:["bergamote","amande","tonka","vanille","praliné","bois","musc"],brings:"Amande et tonka pour arrondir les fleurs et les épices."},
- NPM:{n:"9PM",h:"Afnan",fam:"Ambré sucré",pow:4,v:false,m:"dots",c:["#3F3285","#8A4FB5"],notes:["pomme","cannelle","lavande","bergamote","fleur d'oranger","vanille","tonka","ambre","patchouli"],brings:"Sucre et cannelle très présents. Fonctionne surtout seul."},
- GS:{n:"Grand Soir",h:"Maison Francis Kurkdjian",fam:"Ambré résineux",pow:4,v:false,m:"dots",c:["#A85A16","#E2A33C"],notes:["labdanum","ciste","benjoin","tonka","vanille","ambre"],brings:"Une base ambrée qui arrondit le cuir, l'oud et la rose."},
- SE:{n:"Side Effect",h:"Initio",fam:"Ambré boozy",pow:4,v:false,m:"smoke",c:["#5E2618","#B3542B"],notes:["rhum","cannelle","tabac","vanille"],brings:"Rhum et cannelle pour une chaleur gourmande et sombre."},
- AL:{n:"African Leather",h:"Memo Paris",fam:"Cuir épicé",pow:4,v:false,m:"grain",c:["#4E2C1A","#9C6B3C"],notes:["bergamote","cumin","cardamome","safran","géranium","cuir","patchouli","vétiver"],brings:"Un daim épicé qui rend un accord plus sombre et texturé."},
+ FN:{n:"Fleur Narcotique",h:"Ex Nihilo",fam:"Floral fruité",pow:3,v:true,m:"petals",c:["#E86E94","#F3A46B"],pyr:{t:"bergamote, litchi, pêche",c:"hédione, jasmin, fleur d'oranger, pivoine",f:"mousse de chêne, musc blanc, bois"},notes:["bergamote","litchi","pêche","hédione","jasmin","fleur d'oranger","pivoine","mousse de chêne","musc blanc","bois"],brings:"Lumière fruitée (litchi, pêche) qui éclaire les roses et les ouds."},
+ GF:{n:"Gentle Fluidity Gold",h:"Maison Francis Kurkdjian",fam:"Ambré vanillé musqué",pow:3,v:true,m:"rings",c:["#B9871F","#E7C467"],pyr:{t:"baies, muscade",c:"coriandre",f:"bois ambrés, caramel, musc, vanille"},notes:["baies","muscade","coriandre","bois ambrés","caramel","musc","vanille"],brings:"Vanille, caramel et muscs : chaud et doux. Pont naturel vers les gourmands et les cuirs."},
+ Marfa:{n:"Marfa",h:"Memo Paris",fam:"Floral blanc solaire",pow:3,v:true,m:"petals",c:["#E9873C","#F0C64B"],pyr:{t:"mandarine, pêche",c:"ylang-ylang, tubéreuse, fleur d'oranger",f:"cèdre, vanille, tonka, santal, musc"},notes:["mandarine","pêche","ylang-ylang","tubéreuse","fleur d'oranger","cèdre","vanille","tonka","santal","musc"],brings:"Fleurs blanches crémeuses, très bon pont vers les gourmands."},
+ VT:{n:"Velvet Tonka",h:"BDK Parfums",fam:"Gourmand ambré",pow:3,v:true,m:"dots",c:["#A06B42","#D7A67A"],pyr:{t:"amande, fleur d'oranger",c:"rose, tabac",f:"ambre, amyris, bois ambrés, tonka, vanille"},notes:["amande","fleur d'oranger","rose","tabac","ambre","amyris","bois ambrés","tonka","vanille"],brings:"Amande et tonka, avec une pointe de tabac, pour arrondir les fleurs et les épices."},
+ NPM:{n:"9PM",h:"Afnan",fam:"Ambré sucré",pow:4,v:true,m:"dots",c:["#3F3285","#8A4FB5"],pyr:{t:"pomme, cannelle, lavande sauvage, bergamote",c:"fleur d'oranger, muguet",f:"vanille, tonka, ambre, patchouli"},notes:["pomme","cannelle","lavande","bergamote","fleur d'oranger","muguet","vanille","tonka","ambre","patchouli"],brings:"Sucre et cannelle très présents. Fonctionne surtout seul."},
+ GS:{n:"Grand Soir",h:"Maison Francis Kurkdjian",fam:"Ambré résineux",pow:4,v:false,m:"dots",c:["#A85A16","#E2A33C"],notes:["labdanum","benjoin","tonka","vanille","ambre"],brings:"Une base ambrée qui arrondit le cuir, l'oud et la rose.",srcNote:"Les revendeurs donnent des listes différentes ; seul le cœur ambré (labdanum, benjoin, tonka, vanille) est constant."},
+ SE:{n:"Side Effect",h:"Initio",fam:"Ambré boozy",pow:4,v:true,m:"smoke",c:["#5E2618","#B3542B"],pyr:{t:"framboise, rhum",c:"cannelle, hédione, safran, tabac",f:"cèdre, cuir, santal, vanille"},notes:["framboise","rhum","cannelle","hédione","safran","tabac","cèdre","cuir","santal","vanille"],brings:"Rhum, cannelle et tabac, avec un fond de cuir : une chaleur gourmande et sombre."},
+ AL:{n:"African Leather",h:"Memo Paris",fam:"Cuir épicé",pow:4,v:true,m:"grain",c:["#4E2C1A","#9C6B3C"],pyr:{t:"bergamote, cardamome, safran",c:"cumin, géranium",f:"cuir, musc, oud, patchouli, tonka, vétiver"},notes:["bergamote","cardamome","safran","cumin","géranium","cuir","musc","oud","patchouli","tonka","vétiver"],brings:"Un daim épicé qui rend un accord plus sombre et texturé."},
  OB:{n:"Oud Bouquet",h:"Lancôme",fam:"Rose oud gourmand",pow:4,v:true,m:"petals",c:["#8E3D50","#CF8A6C"],notes:["safran","rose","oud","praliné","vanille"],brings:"Rose-oud sucrée et dense.",srcNote:"Tronc commun fiable seulement, les sources se contredisent sur le reste."},
- ON:{n:"Ombre Nomade",h:"Louis Vuitton",fam:"Oud fumé",pow:5,v:false,m:"smoke",c:["#231A27","#6E3A4E"],notes:["framboise","rose","encens","oud","benjoin"],brings:"Fumée d'encens et oud, profondeur immédiate."},
+ ON:{n:"Ombre Nomade",h:"Louis Vuitton",fam:"Oud fumé",pow:5,v:true,m:"smoke",c:["#231A27","#6E3A4E"],notes:["oud","benjoin","encens","framboise"],brings:"Fumée d'encens et oud, profondeur immédiate."},
  LSR:{n:"Les Sables Roses",h:"Louis Vuitton",fam:"Rose oud ambré",pow:5,v:true,m:"petals",c:["#CE5A75","#E8A8A0"],pyr:{t:"safran, poivre noir",c:"rose de Bulgarie, rose centifolia",f:"ambre gris, oud"},brings:"Rose fraîche sur oud chaud, construit sur le contraste."},
  AT:{n:"Arabians Tonka",h:"Montale",fam:"Rose oud sucré",pow:5,v:true,m:"petals",c:["#6E1024","#C2413B"],pyr:{t:"bergamote, safran",c:"rose de Bulgarie, oud",f:"ambre, mousse de chêne, tonka, cuir, sucre brun, musc blanc"},brings:"Rose-oud safranée très sucrée, tenue extrême."},
- PoaL:{n:"Portrait of a Lady",h:"Frédéric Malle",fam:"Rose patchouli",pow:5,v:false,m:"petals",c:["#4F1230","#A3245A"],notes:["rose turque","framboise","cassis","girofle","cannelle","patchouli","encens","santal","benjoin","musc"],brings:"Rose sombre et opulente. Partage le benjoin avec Grand Soir."},
+ PoaL:{n:"Portrait of a Lady",h:"Frédéric Malle",fam:"Rose patchouli",pow:5,v:true,m:"petals",c:["#4F1230","#A3245A"],pyr:{t:"rose",c:"cassis, framboise, girofle",f:"patchouli, santal, encens"},notes:["rose","cassis","framboise","girofle","patchouli","santal","encens"],brings:"Rose sombre et opulente, portée par le patchouli et l'encens."},
  Mega:{n:"Megamare",h:"Orto Parisi",fam:"Marin minéral",pow:5,v:true,m:"waves",c:["#0C4F6B","#2BA3A8"],pyr:{t:"bergamote, citron",c:"calone, hédione, algue, immortelle",f:"ambrox, cèdre, musc"},brings:"Sel, mer et ambrox. Un seul spray suffit toujours."}
 };
 const OCC={cours:"Cours",jumua:"Jumu'ah",soir:"Soirée",rdv:"Rendez-vous",repos:"Week-end"};
@@ -220,8 +233,8 @@ const C=[
  {id:"c5",a:"GF",b:"VT",kind:"top",rank:5,dose:"<b>1</b> Gentle Fluidity Gold au cou · <b>1</b> Velvet Tonka au torse",ch:["gourmand","vanillé","musqué"],why:"La vanille et les muscs du Gold prolongent l'amande de Velvet Tonka.",res:"Cocon gourmand et chic pour l'hiver.",risk:"Peut devenir sirupeux : pas plus de 1 + 1.",occ:["cours","repos","rdv"],wx:["froid"]},
  {id:"c6",a:"AL",b:"GS",kind:"top",rank:6,dose:"<b>1</b> African Leather au torse · <b>1</b> Grand Soir au cou",ch:["cuiré","ambré","épicé"],why:"L'ambre adoucit le cumin et donne au cuir un toucher velours.",res:"Cuiré, chaud, mystérieux.",risk:"Le cumin peut ressortir « sueur » sur certaines peaux.",occ:["soir"],wx:["froid"]},
  {id:"c7",a:"Mega",b:"MT",kind:"top",rank:7,dose:"<b>1</b> Megamare sur les vêtements · <b>1</b> Musk Therapy au cou",ch:["marin","propre"],why:"Les muscs blancs adoucissent l'iode et le minéral de Megamare.",res:"Peau propre après la mer.",risk:"Un spray de trop de Megamare et ça déborde sur toute la pièce.",occ:["cours","repos"],wx:["chaud"]},
- {id:"c8",a:"PoaL",b:"GS",kind:"top",rank:8,dose:"<b>1</b> Portrait of a Lady au torse · <b>1</b> Grand Soir au cou",ch:["floral","ambré","épicé"],why:"Les deux partagent le benjoin, la jonction est naturelle.",res:"Rose-patchouli plus ambrée et enveloppante.",risk:"Puissant, sature vite. Uniquement l'hiver.",occ:["soir","rdv"],wx:["froid"]},
- {id:"c9",a:"SE",b:"VT",kind:"top",rank:9,dose:"<b>1</b> Side Effect au torse · <b>1</b> Velvet Tonka au cou",ch:["gourmand","vanillé","épicé"],why:"Le rhum et la cannelle rencontrent l'amande et le praliné.",res:"Gourmand addictif.",risk:"Vanille en double : peut devenir écœurant.",occ:["soir","rdv"],wx:["froid"]},
+ {id:"c8",a:"PoaL",b:"GS",kind:"top",rank:8,dose:"<b>1</b> Portrait of a Lady au torse · <b>1</b> Grand Soir au cou",ch:["floral","ambré","épicé"],why:"La rose-patchouli se pose sur l'ambre résineux de Grand Soir, qui l'arrondit.",res:"Rose-patchouli plus ambrée et enveloppante.",risk:"Puissant, sature vite. Uniquement l'hiver.",occ:["soir","rdv"],wx:["froid"]},
+ {id:"c9",a:"SE",b:"VT",kind:"top",rank:9,dose:"<b>1</b> Side Effect au torse · <b>1</b> Velvet Tonka au cou",ch:["gourmand","vanillé","épicé"],why:"Le rhum, la cannelle et le tabac rencontrent l'amande et la tonka.",res:"Gourmand addictif.",risk:"Vanille en double : peut devenir écœurant.",occ:["soir","rdv"],wx:["froid"]},
  {id:"c10",a:"OB",b:"MT",kind:"top",rank:10,dose:"<b>1</b> Oud Bouquet au torse · <b>1 à 2</b> Musk Therapy au cou",ch:["floral","boisé","propre"],why:"Les muscs allègent la rose-oud pralinée.",res:"Une rose-oud portable de jour en hiver.",risk:"Oud Bouquet garde le dessus. Reste à 1 spray.",occ:["cours","jumua","repos"],wx:["froid","doux"]},
  {id:"c11",a:"VT",b:"MT",kind:"layer",dose:"<b>1</b> Velvet Tonka au torse · <b>1</b> Musk Therapy au cou",ch:["poudré","gourmand","propre"],why:"Le musc aère le gourmand, l'amande réchauffe le musc.",res:"Douceur poudrée, confortable.",risk:"Peu de projection : c'est voulu.",occ:["cours","repos"],wx:["froid","doux"]},
  {id:"c12",a:"Marfa",b:"MT",kind:"layer",dose:"<b>1</b> Marfa au cou · <b>1</b> Musk Therapy au torse",ch:["floral","crémeux","propre"],why:"Le musc assagit la tubéreuse.",res:"Fleur blanche propre, portable en cours.",risk:"La tubéreuse peut monter à la chaleur.",occ:["cours","repos"],wx:["doux","chaud"]},
@@ -254,7 +267,7 @@ const C=[
 ];
 const AVOID=[
  {a:"SE",b:"NPM",why:"Cannelle et sucre en double : écœurant."},
- {a:"OB",b:"VT",why:"Praliné sur praliné, aucun contraste."},
+ {a:"OB",b:"VT",why:"Praliné et vanille sur tonka et vanille : trop sucré, aucun contraste."},
  {a:"ON",b:"OB",why:"Oud sur oud, illisible."},
  {a:"ON",b:"LSR",why:"Oud sur oud, aucun contraste."},
  {a:"AT",b:"OB",why:"Presque le même parfum : rose-oud safranée sucrée."},
@@ -278,6 +291,16 @@ let S={wx:"doux",occ:["cours","cours","cours","cours","jumua","soir","repos"],pi
 try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
 if(!S.jumua){S.occ[4]="jumua";if(S.picks)S.picks[4]=null;S.jumua=true;}
 S.worn=S.worn||[];S.fav=S.fav||[];
+S.custom=S.custom||{perfumes:{},combos:[]};S.custom.perfumes=S.custom.perfumes||{};S.custom.combos=S.custom.combos||[];S.removed=S.removed||[];
+const BASE_C=C.slice(),BASE_AVOID=AVOID.slice();
+const FAM={musc:{l:"Musqué",m:"rings",c:["#6F86C2","#B49AD8"]},floral:{l:"Floral",m:"petals",c:["#D9668C","#F3A46B"]},oud:{l:"Boisé, oud, fumé",m:"smoke",c:["#2E2230","#7A4458"]},marin:{l:"Frais, marin",m:"waves",c:["#0C4F6B","#2BA3A8"]},cuir:{l:"Cuir, épicé",m:"grain",c:["#4E2C1A","#9C6B3C"]},ambre:{l:"Ambré, gourmand",m:"dots",c:["#A85A16","#E2A33C"]}};
+function isActive(k){return !!P[k]&&!S.removed.includes(k);}
+function rebuild(){
+  Object.assign(P,S.custom.perfumes);
+  const cc=[...BASE_C,...S.custom.combos].filter(c=>isActive(c.a)&&(!c.b||isActive(c.b)));C.length=0;C.push(...cc);
+  const av=BASE_AVOID.filter(x=>isActive(x.a)&&isActive(x.b));AVOID.length=0;AVOID.push(...av);
+}
+rebuild();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
 
 const nm=k=>P[k].n;
@@ -321,7 +344,7 @@ function artURL(a,b){
 }
 function artBg(a,b){const u=artURL(a,b);const ca=P[a].c,cb=b?P[b].c:ca;return u?`background-image:url(${u})`:`background:linear-gradient(135deg,${ca[0]},${cb[1]})`;}
 function art(c,opts={}){
-  return `<div class="art" style="${artBg(c.a,c.b)}">${opts.kind!==false?`<span class="kind">${c.kind==="top"?"Top 10":kindLbl[c.kind]}</span>`:""}${c.kind==="top"&&opts.num!==false?`<span class="num">${c.rank}</span>`:""}</div>`;
+  return `<div class="art" style="${artBg(c.a,c.b)}">${opts.kind!==false?`<span class="kind">${c.custom?"Perso":c.kind==="top"?"Top 10":kindLbl[c.kind]}</span>`:""}${c.kind==="top"&&opts.num!==false?`<span class="num">${c.rank}</span>`:""}</div>`;
 }
 const thumb=c=>`<div class="art" style="${artBg(c.a,c.b)}"></div>`;
 const pThumb=k=>`<div class="art" style="${artBg(k)}"></div>`;
@@ -401,7 +424,7 @@ function renderWeek(){
           <button class="t-btn ${sl.cls}" id="sprayBtn">${sl.txt}<small>${sl.sub}</small></button>
           <button class="t-btn ${worn?"done":""}" id="wornBtn">${worn?"Porté ✓":"Porté aujourd'hui"}<small>${worn?"Touche pour annuler":"Ajouter à l'historique"}</small></button>
         </div>
-        <button class="t-link" data-day="${t}">Voir la fiche et le sillage</button>
+        <div class="t-links"><button class="t-link" data-pick="${t}">Choisir moi-même</button><button class="t-link" data-day="${t}">Voir la fiche</button></div>
       </div>
     </section>`;}
   v.innerHTML=`<div class="brand">${LOGO}<span>Sillages</span></div><p class="eyebrow">${dateStr}</p><h1 class="large" data-title="Aujourd'hui">Aujourd'hui</h1>${hero}
@@ -418,11 +441,7 @@ function renderWeek(){
         ${i===t&&cc&&isWornToday(cc.id)?`<span class="check">✓</span>`:""}${CHEV}
       </button>`;}).join("")}</div>
     <div class="btnrow" style="margin-top:14px"><button class="btn" id="regen">Nouvelle semaine</button></div>
-    <p class="foot">La nouvelle semaine évite ce que tu as porté ces 6 derniers jours. En cours : 2 sprays au total. Ton nez s'habitue en 20 minutes, ne rajoute pas parce que tu ne te sens plus.</p>
-    <div class="install"><h4>Sur ton écran d'accueil</h4><ol>
-      <li>Ouvre ce lien dans Safari, connecté à ton compte Claude.</li>
-      <li>Touche Partager, puis « Sur l'écran d'accueil ».</li>
-      <li>Nomme-la « Sillages ».</li></ol></div>`;
+    <p class="foot">La nouvelle semaine évite ce que tu as porté ces 6 derniers jours. En cours : 2 sprays au total. Ton nez s'habitue en 20 minutes, ne rajoute pas parce que tu ne te sens plus.</p>`;
   bindSpray();
   observeTitle();
 }
@@ -481,6 +500,8 @@ function renderCombosBody(){
   const favs=S.fav.map(byId).filter(Boolean);
   const seen=new Set();const recent=[...S.worn].reverse().map(w=>byId(w.id)).filter(c=>c&&!seen.has(c.id)&&seen.add(c.id)).slice(0,10);
   b.innerHTML=`
+    <div class="btnrow" style="margin:6px 0 0"><button class="btn ghost" id="addCombo">Créer mon combo</button></div>
+    ${C.some(c=>c.custom&&c.kind!=="solo")?`<div class="sec"><h2>Mes créations</h2></div>${shelf(C.filter(c=>c.custom&&c.kind!=="solo"))}`:""}
     ${favs.length?`<div class="sec"><h2>Favoris</h2></div>${shelf(favs)}`:""}
     ${recent.length?`<div class="sec"><h2>Récemment portés</h2></div>${shelf(recent)}`:""}
     <div class="sec"><h2>Top 10</h2></div>${shelf(C.filter(c=>c.kind==="top"))}
@@ -491,24 +512,23 @@ function renderCombosBody(){
     <div class="sec"><h2>Temps froid</h2></div>${shelf(lay.filter(c=>c.wx.includes("froid")))}
     <div class="sec"><h2>Temps chaud</h2></div>${shelf(C.filter(c=>c.wx.includes("chaud")))}
     <div class="sec"><h2>Signatures originales</h2></div>${shelf(C.filter(c=>c.kind==="orig"))}
-    <div class="sec"><h2>À porter seul</h2></div>${shelf(C.filter(c=>c.kind==="solo"))}
-    <div class="sec"><h2>Tester un combo</h2></div>
-    <div class="list" style="padding:12px 14px;font-size:15px;color:var(--label2)">1 spray de chaque, sur deux zones différentes. Sens après 10 minutes, puis après 1 à 2 heures. Compare un autre jour avec chaque parfum seul. Si l'un écrase l'autre, baisse-le d'un spray ou passe-le sur les vêtements.</div>`;
+    <div class="sec"><h2>À porter seul</h2></div>${shelf(C.filter(c=>c.kind==="solo"))}`;
 }
 
 /* ===== parfums ===== */
 let pq="";
 function renderPerfumes(){
   const v=document.getElementById("v-parfums");
-  v.innerHTML=`<p class="eyebrow">${Object.keys(P).length} flacons</p><h1 class="large" data-title="Parfums">Parfums</h1>
+  v.innerHTML=`<p class="eyebrow">${Object.keys(P).filter(isActive).length} flacons</p><h1 class="large" data-title="Parfums">Parfums</h1>
     <label class="search">${SEARCH}<input id="pq" type="search" placeholder="Rechercher" value="${pq}" autocomplete="off"></label>
-    <div id="pbody"></div>`;
+    <div class="btnrow" style="margin:4px 0 14px"><button class="btn" id="addPerf">Ajouter un parfum</button></div>
+    <div id="pbody"></div><div id="pextra"></div>`;
   document.getElementById("pq").addEventListener("input",e=>{pq=e.target.value;renderPBody();});
-  renderPBody();observeTitle();
+  renderPBody();renderPExtra();observeTitle();
 }
 function renderPBody(){
   const q=norm(pq.trim());
-  const keys=Object.keys(P).sort((a,b)=>P[a].n.localeCompare(P[b].n,"fr")).filter(k=>!q||norm([P[k].n,P[k].h,P[k].fam,...(P[k].notes||[]),...(P[k].pyr?Object.values(P[k].pyr):[])].join(" ")).includes(q));
+  const keys=Object.keys(P).filter(isActive).sort((a,b)=>P[a].n.localeCompare(P[b].n,"fr")).filter(k=>!q||norm([P[k].n,P[k].h,P[k].fam,...(P[k].notes||[]),...(P[k].pyr?Object.values(P[k].pyr):[])].join(" ")).includes(q));
   document.getElementById("pbody").innerHTML=keys.length?`<div class="list">${keys.map(k=>`<button class="row" data-perf="${k}">${pThumb(k)}
       <div class="tx"><div class="r1">${P[k].n}</div><div class="r2">${P[k].h} · ${P[k].fam}</div></div>${dots(P[k].pow)}${CHEV}</button>`).join("")}</div>`:`<p class="empty">Aucun parfum ne correspond.</p>`;
 }
@@ -520,9 +540,7 @@ function renderAvoid(){
   const row=x=>`<div class="row wrapline" style="cursor:default"><span class="dot ${x.subj?"subj":""}"></span><div class="tx"><div class="r1">${nm(x.a)} + ${nm(x.b)}</div><div class="r2">${x.why}</div></div></div>`;
   v.innerHTML=`<p class="eyebrow">${AVOID.length} associations</p><h1 class="large" data-title="À éviter">À éviter</h1>
     <div class="sec"><h2>Risque réel</h2></div><div class="list">${AVOID.filter(x=>!x.subj).map(row).join("")}</div>
-    <div class="sec"><h2>Question de goût</h2></div><div class="list">${AVOID.filter(x=>x.subj).map(row).join("")}</div>
-    <div class="sec"><h2>Pas en cours ni à la mosquée</h2></div>
-    <div class="list" style="padding:12px 14px;font-size:15px;color:var(--label2)">Portrait of a Lady, Arabians Tonka seul, Side Effect, et Megamare dosé normalement. Ombre Nomade et Les Sables Roses seulement à 1 spray, sur les vêtements ou le torse.</div>`;
+    <div class="sec"><h2>Question de goût</h2></div><div class="list">${AVOID.filter(x=>x.subj).map(row).join("")}</div>`;
   observeTitle();
 }
 
@@ -547,7 +565,7 @@ sheet.addEventListener("touchend",()=>{if(dy0===null)return;sheet.classList.remo
 
 function comboBody(c){
   const ctx=[...c.occ.map(o=>OCC[o]),...c.wx.map(w=>WX[w])];
-  return `<div class="shead">${art(c)}<div><h3>${label(c)}</h3><p>${c.kind==="top"?"Top 10 · n°"+c.rank:kindLbl[c.kind]}</p></div></div>
+  return `<div class="shead">${art(c)}<div><h3>${label(c)}</h3><p>${c.custom?"Ta création":c.kind==="top"?"Top 10 · n°"+c.rank:kindLbl[c.kind]}</p></div></div>
     <div class="dose">${c.dose}</div>
     ${silBlock(c)}
     <div class="tags">${c.ch.map(x=>`<span>${x}</span>`).join("")}</div>
@@ -556,14 +574,14 @@ function comboBody(c){
     ${c.risk?`<div class="risk"><span class="k">Risque</span>${c.risk}</div>`:""}
     <div class="blk"><span class="k">Quand</span><p>${ctx.join(" · ")}</p></div>`;
 }
-function openCombo(id){const c=byId(id);openSheet(comboBody(c)+`<div class="btnrow"><button class="btn ghost" data-wear="${id}">${isWornToday(id)?"Porté aujourd'hui ✓":"Je le porte aujourd'hui"}</button></div>`,id);}
+function openCombo(id){const c=byId(id);openSheet(comboBody(c)+`<div class="btnrow"><button class="btn ghost" data-wear="${id}">${isWornToday(id)?"Porté aujourd'hui ✓":"Je le porte aujourd'hui"}</button></div>`+(c.custom&&c.kind!=="solo"?`<button class="btn ghost danger full" style="margin-top:10px" data-delcombo="${id}">Supprimer ce combo</button>`:""),id);}
 function openDay(i){
   const c=byId(S.picks[i]);
   openSheet(`<p class="eyebrow" style="margin-top:0">${DAYS[i]}${i===todayIdx()?" · Aujourd'hui":""}</p>
     <div class="seg" id="occSeg" data-i="${i}" style="margin:8px 0 16px">${Object.entries(OCC).map(([k,l])=>`<button data-occ="${k}" aria-pressed="${S.occ[i]===k}">${l}</button>`).join("")}</div>
     ${S.occ[i]==="jumua"?`<p class="foot" style="margin:0 0 14px">À la mosquée, on prie épaule contre épaule : vise un sillage proche de la peau. Le plus puissant va sur les vêtements, le musc sur la peau.</p>`:""}
     ${c?comboBody(c):"<p>Aucune option.</p>"}
-    <div class="btnrow"><button class="btn" data-change="${i}">Changer</button></div>`,c&&c.id);
+    <div class="btnrow"><button class="btn ghost" data-pick="${i}">Choisir moi-même</button><button class="btn" data-change="${i}">Autre idée</button></div>`,c&&c.id);
 }
 function openPerf(k){
   const p=P[k];
@@ -574,7 +592,127 @@ function openPerf(k){
     <div class="blk"><span class="k">Notes · ${p.v?"vérifiées":"usuelles"}</span>${notes}${p.srcNote?`<p class="foot" style="margin:6px 0 0">${p.srcNote}</p>`:""}</div>
     <div class="blk"><span class="k">Apporte au layering</span><p>${p.brings}</p></div>
     <div class="sec" style="margin-top:18px"><h2 style="font-size:19px">Ses combos</h2></div>
-    ${combos.length?`<div class="list" style="background:var(--bg)">${combos.map(c=>`<button class="row" data-combo="${c.id}">${thumb(c)}<div class="tx"><div class="r1">${nm(c.a===k?c.b:c.a)}</div><div class="r2">${c.res}</div></div>${CHEV}</button>`).join("")}</div>`:`<p class="foot">Plutôt à porter seul.</p>`}`);
+    ${combos.length?`<div class="list" style="background:var(--bg)">${combos.map(c=>`<button class="row" data-combo="${c.id}">${thumb(c)}<div class="tx"><div class="r1">${nm(c.a===k?c.b:c.a)}</div><div class="r2">${c.res}</div></div>${CHEV}</button>`).join("")}</div>`:`<p class="foot">${isActive(k)?"Plutôt à porter seul.":"Ses combos réapparaîtront si tu le remets dans ta collection."}</p>`}${perfActions(k)}`);
+}
+
+/* ===== choisir soi-même ===== */
+let pickerDay=0,pkq="";
+function openPicker(i){
+  pickerDay=i;pkq="";
+  openSheet(`<h3 class="ftitle">${i===todayIdx()?"Ce que je porte aujourd'hui":"Mon choix pour "+DAYS[i].toLowerCase()}</h3>
+    <label class="search">${SEARCH}<input id="pkq" type="search" placeholder="Parfum ou combo" autocomplete="off"></label>
+    <div id="pklist"></div>`);
+  document.getElementById("pkq").addEventListener("input",e=>{pkq=e.target.value;renderPickList();});
+  renderPickList();
+}
+function renderPickList(){
+  const q=norm(pkq.trim()),occ=S.occ[pickerDay],cur=S.picks[pickerDay];
+  const row=c=>`<button class="row" data-choose="${c.id}">${thumb(c)}<div class="tx"><div class="r1">${label(c)}</div><div class="r2">${c.dose.replace(/<[^>]+>/g,"")}</div></div>${c.id===cur?'<span class="check">✓</span>':""}</button>`;
+  const el=document.getElementById("pklist");if(!el)return;
+  if(q){const hits=C.filter(c=>norm(label(c)).includes(q));el.innerHTML=hits.length?`<div class="list" style="background:var(--bg)">${hits.map(row).join("")}</div>`:`<p class="empty">Aucun résultat.</p>`;return;}
+  const solos=C.filter(c=>c.kind==="solo"),lay=C.filter(c=>c.kind!=="solo");
+  const forOcc=lay.filter(c=>c.occ.includes(occ));
+  el.innerHTML=`<div class="sec" style="margin-top:14px"><h2 style="font-size:19px">Un seul parfum</h2></div><div class="list" style="background:var(--bg)">${solos.map(row).join("")}</div>
+    ${forOcc.length?`<div class="sec"><h2 style="font-size:19px">Combos ${OCC[occ]}</h2></div><div class="list" style="background:var(--bg)">${forOcc.map(row).join("")}</div>`:""}
+    <div class="sec"><h2 style="font-size:19px">Tous les combos</h2></div><div class="list" style="background:var(--bg)">${lay.filter(c=>!forOcc.includes(c)).map(row).join("")}</div>`;
+}
+function choose(id){
+  const i=pickerDay;const old=S.picks[i];
+  if(i===todayIdx()){const k=dkey();const w=S.worn.find(x=>x.d===k&&x.id===old);if(w)w.id=id;}
+  S.picks[i]=id;save();renderWeek();renderCombosBodySafe();closeSheet();
+}
+
+/* ===== gestion de la collection ===== */
+const clean=s=>String(s||"").replace(/[<>"]/g,"").trim();
+const selv=id=>[...document.querySelectorAll("#"+id+" [aria-pressed=\"true\"]")].map(b=>b.dataset.v);
+const ferr=m=>{const e=document.getElementById("fErr");if(e)e.textContent=m;};
+function refreshPicks(){const used=new Set();S.picks=S.picks.map((id,i)=>{const ok=id&&byId(id)&&!used.has(id);const nid=ok?id:pickFor(i,used);used.add(nid);return nid;});save();}
+function applyChange(){rebuild();refreshPicks();renderWeek();renderCombos();renderPerfumes();renderAvoid();}
+function perfActions(k){
+  const p=P[k];let h=`<div class="sec" style="margin-top:22px"><h2 style="font-size:19px">Ma collection</h2></div>`;
+  if(isActive(k))h+=`<button class="btn ghost danger full" data-remove="${k}">Je ne l'ai plus</button><p class="foot">Le parfum et ses combos disparaissent de l'app. Tu pourras le remettre plus tard.</p>`;
+  else h+=`<button class="btn full" data-restore="${k}">Remettre dans ma collection</button>`;
+  if(p.custom)h+=`<button class="btn ghost danger full" style="margin-top:10px" data-delete="${k}">Supprimer définitivement</button>`;
+  return h;
+}
+function renderPExtra(){
+  const el=document.getElementById("pextra");if(!el)return;
+  const rem=S.removed.filter(k=>P[k]);
+  el.innerHTML=`${rem.length?`<div class="sec"><h2>Plus dans ma collection</h2></div><div class="list">${rem.map(k=>`<button class="row" data-perf="${k}">${pThumb(k)}<div class="tx"><div class="r1">${P[k].n}</div><div class="r2">Touche pour le remettre</div></div>${CHEV}</button>`).join("")}</div>`:""}
+    <div class="sec"><h2>Sauvegarde</h2></div>
+    <div class="list" style="padding:12px 14px">
+      <p class="foot" style="margin:0 0 10px">Tes ajouts, ton historique et tes favoris restent sur ce téléphone. Copie ta sauvegarde pour les garder ou les transférer sur une autre version de l'app.</p>
+      <div class="btnrow" style="margin:0"><button class="btn ghost" id="bkCopy">Copier</button><button class="btn ghost" id="bkImport">Importer</button></div>
+      <textarea class="inp" id="bkText" rows="3" placeholder="Colle ici une sauvegarde, puis touche Importer"></textarea>
+      <p class="foot" id="bkMsg" style="margin:6px 0 0"></p>
+    </div>`;
+}
+function openAddPerf(){
+  openSheet(`<h3 class="ftitle">Ajouter un parfum</h3>
+    <div class="field"><label for="fN">Nom</label><input id="fN" class="inp" maxlength="40" placeholder="ex : Baccarat Rouge 540" autocomplete="off"></div>
+    <div class="field"><label for="fH">Maison</label><input id="fH" class="inp" maxlength="40" placeholder="ex : Maison Francis Kurkdjian" autocomplete="off"></div>
+    <div class="field"><span class="flabel">Famille</span><div class="chips pick1" id="fFam">${Object.entries(FAM).map(([k,f],i)=>`<button class="chipt" data-v="${k}" aria-pressed="${i===0}">${f.l}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Puissance</span><div class="seg pick1" id="fPow">${[1,2,3,4,5].map(n=>`<button data-v="${n}" aria-pressed="${n===3}">${n}</button>`).join("")}</div><p class="foot" style="margin:6px 0 0">1 : très discret · 3 : moyen · 5 : remplit une pièce</p></div>
+    <div class="field"><label for="fNotes">Notes principales</label><input id="fNotes" class="inp" placeholder="ex : safran, jasmin, ambre, cèdre" autocomplete="off"></div>
+    <div class="field"><span class="flabel">Quand le porter</span><div class="chips" id="fOcc">${Object.entries(OCC).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k==="soir"}">${l}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Météo</span><div class="chips" id="fWx">${Object.entries(WX).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k!=="chaud"}">${l}</button>`).join("")}</div></div>
+    <p class="err" id="fErr"></p>
+    <button class="btn full" id="savePerf">Ajouter à ma collection</button>
+    <p class="foot">Il apparaîtra comme parfum à porter seul, et tu pourras l'utiliser dans tes propres combos. Pour des layerings experts, donne-moi son nom dans Claude.</p>`);
+}
+function savePerf(){
+  const n=clean(document.getElementById("fN").value),h=clean(document.getElementById("fH").value);
+  const fam=selv("fFam")[0]||"musc",pow=+(selv("fPow")[0]||3),occ=selv("fOcc"),wx=selv("fWx");
+  const notes=clean(document.getElementById("fNotes").value).split(",").map(s=>s.trim()).filter(Boolean).slice(0,12);
+  if(!n){ferr("Donne un nom au parfum.");return;}
+  if(!occ.length||!wx.length){ferr("Choisis au moins une occasion et une météo.");return;}
+  if(Object.keys(P).some(k=>isActive(k)&&P[k].n.toLowerCase()===n.toLowerCase())){ferr("Ce parfum est déjà dans ta collection.");return;}
+  const k="u"+Date.now().toString(36),f=FAM[fam];
+  S.custom.perfumes[k]={n,h:h||"Ma collection",fam:f.l,pow,v:false,m:f.m,c:f.c,notes:notes.length?notes:["notes à compléter"],brings:"Ajouté par toi. Demande-moi ses meilleurs layerings dans Claude.",custom:true};
+  S.custom.combos.push({id:"us"+k,a:k,kind:"solo",custom:true,dose:pow>=4?"<b>1</b> spray, torse":"<b>2</b> sprays, cou et torse",ch:[f.l.split(",")[0].toLowerCase()],why:"Ajouté par toi.",res:notes.length?notes.slice(0,3).join(", "):f.l,occ,wx});
+  save();applyChange();openPerf(k);
+}
+const ZL={cou:"au cou",torse:"au torse",vet:"sur les vêtements"};
+function openAddCombo(){
+  const keys=Object.keys(P).filter(isActive).sort((a,b)=>P[a].n.localeCompare(P[b].n,"fr"));
+  const opts=sel=>keys.map(k=>`<option value="${k}" ${k===sel?"selected":""}>${P[k].n}</option>`).join("");
+  const part=(i,def)=>`<div class="field"><label for="f${i}">Parfum ${i==="A"?1:2}</label><select id="f${i}" class="inp">${opts(def)}</select>
+    <div class="duo"><div class="seg pick1" id="fD${i}"><button data-v="1" aria-pressed="true">1 spray</button><button data-v="2" aria-pressed="false">2</button></div>
+    <div class="seg pick1" id="fZ${i}"><button data-v="cou" aria-pressed="${i==="A"}">Cou</button><button data-v="torse" aria-pressed="${i==="B"}">Torse</button><button data-v="vet" aria-pressed="false">Habits</button></div></div></div>`;
+  openSheet(`<h3 class="ftitle">Créer mon combo</h3>${part("A",keys[0])}${part("B",keys[1])}
+    <div class="risk" id="fWarn" hidden></div>
+    <div class="field"><span class="flabel">Quand le porter</span><div class="chips" id="fOcc">${Object.entries(OCC).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k==="soir"}">${l}</button>`).join("")}</div></div>
+    <div class="field"><span class="flabel">Météo</span><div class="chips" id="fWx">${Object.entries(WX).map(([k,l])=>`<button class="chipt" data-v="${k}" aria-pressed="${k!=="chaud"}">${l}</button>`).join("")}</div></div>
+    <div class="field"><label for="fNote">Ton ressenti (facultatif)</label><input id="fNote" class="inp" maxlength="120" placeholder="ex : boisé et doux, parfait le soir" autocomplete="off"></div>
+    <p class="err" id="fErr"></p>
+    <button class="btn full" id="saveCombo">Créer le combo</button>
+    <p class="foot">Teste d'abord 1 spray de chaque sur deux zones différentes avant de l'adopter.</p>`);
+  const chk=()=>{const a=document.getElementById("fA").value,b=document.getElementById("fB").value,w=document.getElementById("fWarn");const av=BASE_AVOID.find(x=>(x.a===a&&x.b===b)||(x.a===b&&x.b===a));w.hidden=!av;if(av)w.innerHTML=`<span class="k">${av.subj?"Question de goût":"Association à risque"}</span>${av.why}`;};
+  document.getElementById("fA").onchange=chk;document.getElementById("fB").onchange=chk;chk();
+}
+function saveCombo(){
+  const a=document.getElementById("fA").value,b=document.getElementById("fB").value;
+  if(a===b){ferr("Choisis deux parfums différents.");return;}
+  const occ=selv("fOcc"),wx=selv("fWx");if(!occ.length||!wx.length){ferr("Choisis au moins une occasion et une météo.");return;}
+  const da=selv("fDA")[0]||"1",db=selv("fDB")[0]||"1",za=selv("fZA")[0]||"cou",zb=selv("fZB")[0]||"torse";
+  const av=BASE_AVOID.find(x=>(x.a===a&&x.b===b)||(x.a===b&&x.b===a));const note=clean(document.getElementById("fNote").value);
+  const fw=f=>f.split(/[ ,]/)[0].toLowerCase();
+  const id="uc"+Date.now().toString(36);
+  S.custom.combos.push({id,a,b,kind:"layer",custom:true,dose:`<b>${da}</b> ${P[a].n} ${ZL[za]} · <b>${db}</b> ${P[b].n} ${ZL[zb]}`,ch:[...new Set([fw(P[a].fam),fw(P[b].fam)])],why:note||"Ta propre association.",res:`${P[a].fam} et ${P[b].fam.toLowerCase()}.`,risk:av?av.why:"",occ,wx});
+  save();applyChange();openCombo(id);
+}
+function backupCopy(){
+  const txt=JSON.stringify({v:1,custom:S.custom,removed:S.removed,fav:S.fav,worn:S.worn,occ:S.occ,wx:S.wx});
+  const ta=document.getElementById("bkText"),msg=document.getElementById("bkMsg");ta.value=txt;
+  const fallback=()=>{ta.focus();ta.select();msg.textContent="Sauvegarde affichée : sélectionne le texte et copie-le.";};
+  try{navigator.clipboard.writeText(txt).then(()=>{msg.textContent="Sauvegarde copiée. Garde-la dans tes Notes.";},fallback);}catch(e){fallback();}
+}
+function backupImport(){
+  const ta=document.getElementById("bkText"),msg=document.getElementById("bkMsg");
+  try{const d=JSON.parse(ta.value);if(!d||typeof d!=="object"||!d.custom)throw 0;
+    S.custom={perfumes:d.custom.perfumes||{},combos:d.custom.combos||[]};S.removed=d.removed||[];S.fav=d.fav||[];S.worn=d.worn||[];if(Array.isArray(d.occ)&&d.occ.length===7)S.occ=d.occ;if(d.wx)S.wx=d.wx;
+    save();applyChange();const m=document.getElementById("bkMsg");if(m)m.textContent="Sauvegarde importée.";
+  }catch(e){msg.textContent="Ce texte n'est pas une sauvegarde Sillages. Copie-la à nouveau depuis l'autre version.";}
 }
 
 /* ===== titre repliable ===== */
@@ -599,6 +737,21 @@ document.addEventListener("click",e=>{
   const t=e.target;
   if(t.closest("#xclose")){closeSheet();return;}
   if(t.closest("#sprayBtn"))return;
+  const pk=t.closest("[data-pick]");if(pk){openPicker(+pk.dataset.pick);return;}
+  const chz=t.closest("[data-choose]");if(chz){choose(chz.dataset.choose);return;}
+  const opt=t.closest("[data-v]");if(opt){const g=opt.parentElement;if(g.classList.contains("pick1"))g.querySelectorAll("[data-v]").forEach(b=>b.setAttribute("aria-pressed",b===opt));else opt.setAttribute("aria-pressed",opt.getAttribute("aria-pressed")!=="true");return;}
+  if(t.closest("#addPerf")){openAddPerf();return;}
+  if(t.closest("#savePerf")){savePerf();return;}
+  if(t.closest("#addCombo")){openAddCombo();return;}
+  if(t.closest("#saveCombo")){saveCombo();return;}
+  if(t.closest("#bkCopy")){backupCopy();return;}
+  if(t.closest("#bkImport")){backupImport();return;}
+  const arm=t.closest("[data-remove],[data-delete],[data-delcombo]");
+  if(arm&&!arm.dataset.armed){arm.dataset.armed="1";arm.textContent="Touche encore pour confirmer";return;}
+  const rm=t.closest("[data-remove]");if(rm){const k=rm.dataset.remove;if(!S.removed.includes(k))S.removed.push(k);save();applyChange();openPerf(k);return;}
+  const rs=t.closest("[data-restore]");if(rs){const k=rs.dataset.restore;S.removed=S.removed.filter(x=>x!==k);save();applyChange();openPerf(k);return;}
+  const dl=t.closest("[data-delete]");if(dl){const k=dl.dataset.delete;delete S.custom.perfumes[k];S.custom.combos=S.custom.combos.filter(c=>c.a!==k&&c.b!==k);S.removed=S.removed.filter(x=>x!==k);delete P[k];save();applyChange();closeSheet();return;}
+  const dc=t.closest("[data-delcombo]");if(dc){const id=dc.dataset.delcombo;S.custom.combos=S.custom.combos.filter(c=>c.id!==id);S.fav=S.fav.filter(x=>x!==id);save();applyChange();closeSheet();return;}
   if(t.closest("#wornBtn")){const c=byId(S.picks[todayIdx()]);if(c){toggleWorn(c.id);renderWeek();renderCombosBodySafe();}return;}
   const fv=t.closest("[data-fav]");if(fv){const id=fv.dataset.fav;const i=S.fav.indexOf(id);i>=0?S.fav.splice(i,1):S.fav.unshift(id);save();fv.classList.toggle("fav-on",i<0);fv.innerHTML=HEART(i<0);fv.setAttribute("aria-label",i<0?"Retirer des favoris":"Ajouter aux favoris");renderCombosBodySafe();return;}
   const wr=t.closest("[data-wear]");if(wr){const id=wr.dataset.wear;toggleWorn(id);wr.textContent=isWornToday(id)?"Porté aujourd'hui ✓":"Je le porte aujourd'hui";renderWeek();renderCombosBodySafe();return;}
@@ -635,8 +788,7 @@ try{
 }catch(e){}
 
 /* ===== démarrage ===== */
-if(!S.picks||S.picks.length!==7||S.picks.some(id=>id&&!byId(id))) generate();
-else if(S.picks.some(id=>!id)){S.picks=S.picks.map((id,i)=>id||pickFor(i,new Set(S.picks)));save();}
+if(!S.picks||S.picks.length!==7) generate(); else refreshPicks();
 renderWeek();renderCombos();renderPerfumes();renderAvoid();
 showTab(S.tab||"semaine");
 </script>
